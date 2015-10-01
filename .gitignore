@@ -1,3 +1,11 @@
+#typescript generated files
+*.js
+*.d.ts
+*.map
+
+.idea
+*.DS_Store
+
 # Logs
 logs
 *.log
