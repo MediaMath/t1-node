@@ -1,0 +1,16 @@
+{
+  "name": "t1-node",
+  "description": "Connection Module for T1 API",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">= 0.12"
+  },
+  "engine-strict": true,
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/MediaMath/t1-node.git"
+  },
+  "dependencies": {
+    "request": "^2.64.0"
+  }
+}
