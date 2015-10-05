@@ -1,10 +1,11 @@
 /// <reference path="../typings/node/node.d.ts"/>
+
 class T1Connection {
     private config;
     private request = require('request');
-    private headers = {'accept':'application/json'}
+    private headers = {'accept':'application/json'};
 
-    constructor(config) {
+    constructor(config, cb) {
         this.config = config;
         var login = this.request.post(
             {
@@ -23,17 +24,13 @@ class T1Connection {
                     return console.log('Error:', error);
                 }
 
-                //Check for right status code
-                if (response.statusCode !== 200) {
-                    return console.log('Invalid Status Code Returned:', response.statusCode);
+                else {
+                    cb(response, body)
                 }
-
-                //All is good. Print the body
-                console.log(body);
             });
     }
 
-    public getSession(): void {
+    public getSession(cb): void {
         this.request.get(
             {
                 jar: true,
@@ -41,9 +38,17 @@ class T1Connection {
                 url: "https://api.mediamath.com/api/v2.0/session",
             },
             function (error, response, body) {
-                console.log(body)
+                //Check for error
+                if (error) {
+                    return console.log('Error:', error);
+                }
+
+                else {
+                    cb(response, body)
+                }
             });
     }
+
 }
 
 export = T1Connection;
