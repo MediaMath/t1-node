@@ -3,7 +3,7 @@
 class T1Connection {
     private config;
     private request = require('request');
-    private headers = {'accept':'application/json'};
+    private headers = {'accept':'application/vnd.mediamath.v1+json'};
 
     constructor(config, cb) {
         this.config = config;
@@ -30,12 +30,11 @@ class T1Connection {
             });
     }
 
-    public getSession(cb): void {
-        this.request.get(
-            {
+    public get(endpoint: string, cb) {
+        this.request.get( {
                 jar: true,
                 headers: this.headers,
-                url: "https://api.mediamath.com/api/v2.0/session",
+                url: "https://api.mediamath.com/api/v2.0/" + endpoint,
             },
             function (error, response, body) {
                 //Check for error
@@ -44,9 +43,13 @@ class T1Connection {
                 }
 
                 else {
-                    cb(response, body)
+                    return cb(response, body);
                 }
             });
+    }
+
+    public getSession(cb): void {
+        return this.get('session', cb);
     }
 
 }
