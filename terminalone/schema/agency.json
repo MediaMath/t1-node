@@ -47,7 +47,8 @@
         },
         "entity_type": {
           "id": "/agency/data/entity_type",
-          "type": "string"
+          "type": "string",
+          "readonly": true
         }
       },
       "required": [
