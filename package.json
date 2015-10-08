@@ -11,6 +11,7 @@
     "url": "http://github.com/MediaMath/t1-node.git"
   },
   "dependencies": {
+    "hoek": "^2.16.3",
     "jsonschema": "^1.0.2",
     "request": "^2.64.0"
   },

@@ -53,10 +53,12 @@
       },
       "required": [
         "name",
+        "id",
         "organization_id",
         "status",
         "allow_x_adv_pixels",
         "allow_x_adv_optimization",
+        "version",
         "entity_type"
       ]
     }
