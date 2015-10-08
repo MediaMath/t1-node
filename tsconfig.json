@@ -6,8 +6,7 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "declaration": true,
-    "noEmitOnError": true,
-    "outDir": "dist/t1-node"
+    "noEmitOnError": true
   },
   "files": [
     "lib/references.ts",

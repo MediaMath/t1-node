@@ -1,8 +1,7 @@
 #typescript generated files
-lib/*.js
-lib/*.map
-lib/models/*.js
-lib/models/*.map
+*.js
+*.d.ts
+*.map
 
 .idea
 *.DS_Store
