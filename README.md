@@ -2,6 +2,10 @@ t1-node
 =======
 
 Node implementation of a T1 API Library
+
+### Compilation/Installation
+Checkout, then `npm install .`
+
 ### Usage
 ``` js
 var t1 = require('mmt1');
