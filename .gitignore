@@ -1,8 +1,8 @@
 #typescript generated files
-terminalone/*.js
-terminalone/*.map
-terminalone/models/*.js
-terminalone/models/*.map
+lib/*.js
+lib/*.map
+lib/models/*.js
+lib/models/*.map
 
 .idea
 *.DS_Store

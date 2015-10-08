@@ -10,10 +10,10 @@
     "outDir": "dist/t1-node"
   },
   "files": [
-    "terminalone/references.ts",
-    "terminalone/t1connection.ts",
-    "terminalone/entity.ts",
-    "terminalone/entitymap.ts",
+    "lib/references.ts",
+    "lib/t1connection.ts",
+    "lib/entity.ts",
+    "lib/entitymap.ts",
     "index.ts"
   ]
 }
