@@ -15,16 +15,12 @@ class Entity {
         this.entity_type = name;
         this.connection = connection;
         const fs = require("fs");
-        const schemaContent = fs.readFileSync("./schema/" + this.entity_type + ".json", "utf8");
+        const schemaContent = fs.readFileSync(__dirname + "/schema/" + this.entity_type + ".json", "utf8");
         this.schema = JSON.parse(schemaContent);
         if (id != null) {
             var that = this;
-            this.connection.get(entitymap.get_endpoint(this.entity_type) + "/" + id, function (response, body) {
-                var content = JSON.parse(body);
-                console.log(content);
-                that.data = content.data;
-                that.meta = content.meta;
-            });
+            this.connection.get(entitymap.get_endpoint(this.entity_type) + "/" + id,
+                function () { return that.update_entity.apply(that, arguments) });
         }
     }
 
@@ -37,21 +33,36 @@ class Entity {
         })
     }
 
+    // called on successful save of entity
+    private update_entity(response, body) {
+        var content = JSON.parse(body);
+        console.log(content);
+        this.data = content.data;
+        this.meta = content.meta;
+    }
+
     save() {
         var verification = this.ensure_valid();
-        if (verification.length == 0) {
+        if (verification.length != 0) {
+            console.log(verification.join(', '));
+        }
+        else {
+            var that = this;
             var schema = this.schema.properties.data.properties;
             var form = JSON.parse(JSON.stringify(this.data));
             Object.keys(schema).forEach(function (key) {
                 if (schema[key].readonly) delete form[key];
             });
 
-            this.connection.post(entitymap.get_endpoint(this.entity_type) + "/" + this.data.id, form, console.log)
-        }
-        else {
-            console.log(verification.join(', '));
+            var endpoint = entitymap.get_endpoint(this.entity_type);
+            if (typeof this.data.id != 'undefined') {
+                endpoint += "/" + this.data.id;
+            }
+            this.connection.post(endpoint, form,
+                function () { return that.update_entity.apply(that, arguments) })
         }
     }
+
 
 }
 
