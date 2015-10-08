@@ -1,6 +1,7 @@
-
-var entityMap = {
-    'agency' : 'agencies'
+var entitymap = {
+    'agency': 'agencies'
 };
 
-export = entityMap;
+export function get_endpoint(entity:string) {
+    return entitymap[entity];
+}

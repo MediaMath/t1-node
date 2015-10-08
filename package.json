@@ -6,12 +6,16 @@
     "node": ">= 0.12"
   },
   "engine-strict": true,
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/MediaMath/t1-node.git"
-  },
   "dependencies": {
     "jsonschema": "^1.0.2",
     "request": "^2.64.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-typescript": "^0.7.0",
+    "typescript": "1.6.2"
+  },
+  "scripts": {
+    "build": "tsc"
   }
 }

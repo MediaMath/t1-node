@@ -1,8 +1,8 @@
-/// <reference path="../typings/node/node.d.ts"/>
+/// <reference path="references.ts" />
 
-var request = require('request');
-var querystring = require('querystring');
-var api_url = "https://api.mediamath.com/api/v2.0/";
+const request = require('request');
+const querystring = require('querystring');
+const api_url = "https://api.mediamath.com/api/v2.0/";
 
 class T1Connection {
     private config;
@@ -39,7 +39,7 @@ class T1Connection {
         });
     };
 
-    public get(endpoint:string, cb) {
+    get(endpoint:string, cb) {
         request.get({
                 jar: true,
                 headers: this.accept_headers,
@@ -57,11 +57,11 @@ class T1Connection {
             });
     }
 
-    public getSession(cb):void {
+    getSession(cb):void {
         return this.get('session', cb);
     }
 
-    public post(endpoint:string, form:Object, cb) {
+    post(endpoint:string, form:Object, cb) {
 
         var formData = querystring.stringify(form);
         var contentLength = formData.length;

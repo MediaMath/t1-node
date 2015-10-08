@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "removeComments": true,
+    "target": "es5",
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "declaration": true,
+    "noEmitOnError": true,
+    "outDir": "dist/t1-node"
+  },
+  "files": [
+    "terminalone/references.ts",
+    "terminalone/t1connection.ts",
+    "terminalone/entity.ts",
+    "terminalone/entitymap.ts",
+    "index.ts"
+  ]
+}

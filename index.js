@@ -1,1 +1,0 @@
-module.exports = require('./terminalone/t1-rest-sdk.js')();

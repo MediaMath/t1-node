@@ -1,6 +1,6 @@
-/// <reference path="../../typings/node/node.d.ts"/>
+/// <reference path="references.ts" />
 
-var entityMap = require("./entitymap");
+const entitymap = require('./entitymap')
 
 class Entity {
     private entity_type;
@@ -19,7 +19,7 @@ class Entity {
         this.schema = JSON.parse(schemaContent);
         if (id != null) {
             var that = this;
-            this.connection.get(entityMap[this.entity_type] + "/" + id, function (response, body) {
+            this.connection.get(entitymap.get_endpoint(this.entity_type) + "/" + id, function (response, body) {
                 var content = JSON.parse(body);
                 console.log(content);
                 that.data = content.data;
@@ -46,13 +46,12 @@ class Entity {
                 if (schema[key].readonly) delete form[key];
             });
 
-            this.connection.post(entityMap[this.entity_type] + "/" + this.data.id, form, console.log)
+            this.connection.post(entitymap.get_endpoint(this.entity_type) + "/" + this.data.id, form, console.log)
         }
         else {
             console.log(verification.join(', '));
         }
     }
-
 
 }
 
