@@ -1,0 +1,87 @@
+{
+  "id": "/advertiser",
+  "type": "object",
+  "properties": {
+    "data": {
+      "id": "data",
+      "type": "object",
+      "properties": {
+        "id": {
+          "id": "/advertiser/data/id",
+          "type": "integer",
+          "readonly": true
+        },
+        "name": {
+          "id": "/advertiser/data/name",
+          "type": "string"
+        },
+        "minimize_multi_ads": {
+          "id": "/advertiser/data/minimize_multi_ads",
+          "type": "boolean"
+        },
+        "frequency_type": {
+          "id": "/advertiser/data/frequency_type",
+          "type": "string"
+        },
+        "frequency_interval": {
+          "id": "/advertiser/data/frequency_interval",
+          "type": "string"
+        },
+        "status": {
+          "id": "/advertiser/data/status",
+          "type": "boolean"
+        },
+        "dmp_enabled": {
+          "id": "/advertiser/data/dmp_enabled",
+          "type": "string"
+        },
+        "agency_id": {
+          "id": "/advertiser/data/agency_id",
+          "type": "integer"
+        },
+        "allow_x_strat_optimization": {
+          "id": "/advertiser/data/allow_x_strat_optimization",
+          "type": "boolean"
+        },
+        "domain": {
+          "id": "/advertiser/data/domain",
+          "type": "string"
+        },
+        "ad_server_id": {
+          "id": "/advertiser/data/ad_server_id",
+          "type": "integer"
+        },
+        "version": {
+          "id": "/advertiser/data/version",
+          "type": "integer"
+        },
+        "updated_on": {
+          "id": "/advertiser/data/updated_on",
+          "type": "string",
+          "readonly": true
+        },
+        "created_on": {
+          "id": "/advertiser/data/created_on",
+          "type": "string",
+          "readonly": true
+        },
+        "entity_type": {
+          "id": "/advertiser/data/entity_type",
+          "type": "string",
+          "readonly": true
+        }
+      },
+      "required": [
+        "name",
+        "ad_server_id",
+        "agency_id",
+        "domain",
+        "vertical_id"
+      ]
+    }
+  },
+  "required": [
+    "data",
+    "meta"
+  ]
+}
