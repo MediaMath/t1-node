@@ -21,11 +21,13 @@
         },
         "frequency_type": {
           "id": "/advertiser/data/frequency_type",
-          "type": "string"
+          "type": "string",
+          "pattern": "(asap|even|no-limit)"
         },
         "frequency_interval": {
           "id": "/advertiser/data/frequency_interval",
-          "type": "string"
+          "type": "string",
+          "pattern": "(hour|day|week|month|not-applicable)"
         },
         "status": {
           "id": "/advertiser/data/status",
