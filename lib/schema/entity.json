@@ -1,0 +1,30 @@
+{
+  "entity": {
+    "id": "/entity",
+    "type": "object",
+    "properties": {
+      "id": {
+        "id": "/entity/id",
+        "type": "integer",
+        "readonly": true
+      },
+      "entity_type": {
+        "id": "/entity/entity_type",
+        "type": "string"
+      },
+      "name": {
+        "id": "/entity/name",
+        "type": "string"
+      },
+      "version": {
+        "id": "/entity/version",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "id",
+      "entity_type",
+      "name"
+    ]
+  }
+}

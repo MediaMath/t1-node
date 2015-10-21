@@ -2,31 +2,21 @@
   "id": "/ad_server",
   "type": "object",
   "properties": {
-    "data": {
-      "id": "data",
-      "type": "object",
-      "properties": {
-        "id": {
-          "id": "/ad_server/data/id",
-          "type": "integer",
-          "readonly": true
-        },
-        "version": {
-          "id": "/ad_server/data/version",
-          "type": "integer"
-        },
-        "name": {
-          "id": "/ad_server/data/name",
-          "type": "string"
-        }
-      },
-      "required": [
-        "name"
-      ]
+    "id": {
+      "id": "/ad_server/data/id",
+      "type": "integer",
+      "readonly": true
+    },
+    "version": {
+      "id": "/ad_server/data/version",
+      "type": "integer"
+    },
+    "name": {
+      "id": "/ad_server/data/name",
+      "type": "string"
     }
   },
   "required": [
-    "data",
-    "meta"
+    "name"
   ]
 }
