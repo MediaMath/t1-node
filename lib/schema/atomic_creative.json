@@ -1,221 +1,206 @@
 {
-  "id": "/atomic_creative",
-  "type": "object",
-  "properties": {
-    "data": {
-      "id": "data",
-      "type": "object",
-      "properties": {
-        "id": {
-          "id": "/atomic_creative/data/id",
-          "type": "integer",
-          "readonly": true
-        },
-        "build_date": {
-          "id": "/atomic_creative/data/build_date",
-          "type": "string",
-          "readonly": true
-        },
-        "created_on": {
-          "id": "/atomic_creative/data/created_on",
-          "type": "string",
-          "readonly": true
-        },
-        "last_modified": {
-          "id": "/atomic_creative/data/last_modified",
-          "type": "string",
-          "readonly": true
-        },
-        "updated_on": {
-          "id": "/atomic_creative/data/updated_on",
-          "type": "string",
-          "readonly": true
-        },
-        "entity_type": {
-          "id": "/atomic_creative/data/end_date",
-          "type": "string",
-          "readonly": true
-        },
-        "version": {
-          "id": "/atomic_creative/data/version",
-          "type": "integer"
-        },
-        "advertiser_id": {
-          "id": "/atomic_creative/data/advertiser_id",
-          "type": "integer"
-        },
-        "ad_format": {
-          "id": "/atomic_creative/data/ad_format",
-          "type": "string",
-          "pattern": "(DISPLAY|EXPANDABLE|MOBILE)",
-          "default_value": "DISPLAY"
-        },
-        "ad_server_type": {
-          "id": "/atomic_creative/data/ad_server_type",
-          "type": "string",
-          "pattern": "(ATLAS|DART|EYEWONDER|MEDIAMIND|MEDIAPLEX|POINTROLL|YIELD_MANAGER|TERMINALONE|MEDIAFORGE|OTHER)",
-          "default_value": "OTHER"
-        },
-        "approval_status": {
-          "id": "/atomic_creative/data/approval_status",
-          "type": "string",
-          "readonly": true
-        },
-        "build_errors": {
-          "id": "/atomic_creative/data/build_errors",
-          "type": "string",
-          "readonly": true
-        },
-        "built": {
-          "id": "/atomic_creative/data/built",
-          "type": "boolean",
-          "readonly": true
-        },
-        "built_by_user_id": {
-          "id": "/atomic_creative/data/built_by_user_id",
-          "type": "integer",
-          "readonly": true
-        },
-        "click_through_url": {
-          "id": "/atomic_creative/data/click_through_url",
-          "type": "string"
-        },
-        "click_url": {
-          "id": "/atomic_creative/data/click_url",
-          "type": "string"
-        },
-        "concept_id": {
-          "id": "/atomic_creative/data/concept_id",
-          "type": "integer"
-        },
-        "creative_import_file_id": {
-          "id": "/atomic_creative/data/creative_import_file_id",
-          "type": "int"
-        },
-        "creative_import_file_id": {
-          "id": "/atomic_creative/data/creative_import_file_id",
-          "type": "int"
-        },
-        "edited_tag": {
-          "id": "/atomic_creative/data/edited_tag",
-          "type": "string"
-        },
-        "end_date": {
-          "id": "/atomic_creative/data/end_date",
-          "type": "string"
-        },
-        "expansion_direction": {
-          "id": "/atomic_creative/data/expansion_direction",
-          "type": "string",
-          "default_value": "NONRESTRICTED"
-        },
-        "expansion_trigger": {
-          "id": "/atomic_creative/data/expansion_trigger",
-          "type": "string",
-          "pattern": "(AUTOMATIC|MOUSEOVER|CLICK)",
-          "default_value": "CLICK"
-        },
-        "external_identifier": {
-          "id": "/atomic_creative/data/external_identifier",
-          "type": "string"
-        },
-        "file_type": {
-          "id": "/atomic_creative/data/file_type",
-          "type": "string",
-          "pattern": "(swf|gif|html5|jpg|jpeg|tif|tiff|png|unknown|vast)",
-          "default_value": "unknown"
-        },
-        "has_sound": {
-          "id": "/atomic_creative/data/has_sound",
-          "type": "boolean"
-        },
-        "height": {
-          "id": "/atomic_creative/data/height",
-          "type": "integer"
-        },
-        "is_https": {
-          "id": "/atomic_creative/data/is_https",
-          "type": "boolean"
-        },
-        "is_multi_creative": {
-          "id": "/atomic_creative/data/is_multi_creative",
-          "type": "boolean"
-        },
-        "media_type": {
-          "id": "/atomic_creative/data/media_type",
-          "type": "string",
-          "pattern": "(display|video|mobile)",
-          "default_value": "display"
-        },
-        "name": {
-          "id": "/atomic_creative/data/name",
-          "type": "string"
-        },
-        "rejected_reason": {
-          "id": "/atomic_creative/data/rejected_reason",
-          "type": "string"
-        },
-        "rich_media": {
-          "id": "/atomic_creative/data/rich_media",
-          "type": "boolean"
-        },
-        "rich_media_provider": {
-          "id": "/atomic_creative/data/rich_media_provider",
-          "type": "string"
-        },
-        "start_date": {
-          "id": "/atomic_creative/data/start_date",
-          "type": "string"
-        },
-        "status": {
-          "id": "/atomic_creative/data/status",
-          "type": "boolean"
-        },
-        "t1as": {
-          "id": "/atomic_creative/data/t1as",
-          "type": "boolean",
-          "readonly": true
-        },
-        "tag": {
-          "id": "/atomic_creative/data/tag",
-          "type": "string"
-        },
-        "tag_type": {
-          "id": "/atomic_creative/data/tag_type",
-          "type": "string",
-          "pattern": "(IFRAME|IMG|NOSCRIPT|SCRIPT)",
-          "default_value": "NOSCRIPT"
-        },
-        "tpas_ad_tag": {
-          "id": "/atomic_creative/data/tpas_ad_tag",
-          "type": "string"
-        },
-        "tpas_ad_tag_name": {
-          "id": "/atomic_creative/data/tpas_ad_tag_name",
-          "type": "string"
-        },
-        "width": {
-          "id": "/atomic_creative/data/width",
-          "type": "integer"
-        }
+  "atomic_creative": {
+    "id": "/atomic_creative",
+    "type": "object",
+    "properties": {
+      "build_date": {
+        "id": "/atomic_creative/data/build_date",
+        "type": "string",
+        "readonly": true
       },
-      "required": [
-        "name",
-        "ad_server_type",
-        "advertiser_id",
-        "concept_id",
-        "external_identifier",
-        "file_type",
-        "height",
-        "width",
-        "tag",
-        "tag_type",
-        "tpas_ad_tag_name"
-      ]
-    }
+      "created_on": {
+        "id": "/atomic_creative/data/created_on",
+        "type": "string",
+        "readonly": true
+      },
+      "last_modified": {
+        "id": "/atomic_creative/data/last_modified",
+        "type": "string",
+        "readonly": true
+      },
+      "updated_on": {
+        "id": "/atomic_creative/data/updated_on",
+        "type": "string",
+        "readonly": true
+      },
+      "version": {
+        "id": "/atomic_creative/data/version",
+        "type": "integer"
+      },
+      "advertiser_id": {
+        "id": "/atomic_creative/data/advertiser_id",
+        "type": "integer"
+      },
+      "ad_format": {
+        "id": "/atomic_creative/data/ad_format",
+        "type": "string",
+        "pattern": "(DISPLAY|EXPANDABLE|MOBILE)",
+        "default_value": "DISPLAY"
+      },
+      "ad_server_type": {
+        "id": "/atomic_creative/data/ad_server_type",
+        "type": "string",
+        "pattern": "(ATLAS|DART|EYEWONDER|MEDIAMIND|MEDIAPLEX|POINTROLL|YIELD_MANAGER|TERMINALONE|MEDIAFORGE|OTHER)",
+        "default_value": "OTHER"
+      },
+      "approval_status": {
+        "id": "/atomic_creative/data/approval_status",
+        "type": "string",
+        "readonly": true
+      },
+      "build_errors": {
+        "id": "/atomic_creative/data/build_errors",
+        "type": "string",
+        "readonly": true
+      },
+      "built": {
+        "id": "/atomic_creative/data/built",
+        "type": "boolean",
+        "readonly": true
+      },
+      "built_by_user_id": {
+        "id": "/atomic_creative/data/built_by_user_id",
+        "type": "integer",
+        "readonly": true
+      },
+      "click_through_url": {
+        "id": "/atomic_creative/data/click_through_url",
+        "type": "string"
+      },
+      "click_url": {
+        "id": "/atomic_creative/data/click_url",
+        "type": "string"
+      },
+      "concept_id": {
+        "id": "/atomic_creative/data/concept_id",
+        "type": "integer"
+      },
+      "creative_import_file_id": {
+        "id": "/atomic_creative/data/creative_import_file_id",
+        "type": "int"
+      },
+      "creative_import_file_id": {
+        "id": "/atomic_creative/data/creative_import_file_id",
+        "type": "int"
+      },
+      "edited_tag": {
+        "id": "/atomic_creative/data/edited_tag",
+        "type": "string"
+      },
+      "end_date": {
+        "id": "/atomic_creative/data/end_date",
+        "type": "string"
+      },
+      "expansion_direction": {
+        "id": "/atomic_creative/data/expansion_direction",
+        "type": "string",
+        "default_value": "NONRESTRICTED"
+      },
+      "expansion_trigger": {
+        "id": "/atomic_creative/data/expansion_trigger",
+        "type": "string",
+        "pattern": "(AUTOMATIC|MOUSEOVER|CLICK)",
+        "default_value": "CLICK"
+      },
+      "external_identifier": {
+        "id": "/atomic_creative/data/external_identifier",
+        "type": "string"
+      },
+      "file_type": {
+        "id": "/atomic_creative/data/file_type",
+        "type": "string",
+        "pattern": "(swf|gif|html5|jpg|jpeg|tif|tiff|png|unknown|vast)",
+        "default_value": "unknown"
+      },
+      "has_sound": {
+        "id": "/atomic_creative/data/has_sound",
+        "type": "boolean"
+      },
+      "height": {
+        "id": "/atomic_creative/data/height",
+        "type": "integer"
+      },
+      "is_https": {
+        "id": "/atomic_creative/data/is_https",
+        "type": "boolean"
+      },
+      "is_multi_creative": {
+        "id": "/atomic_creative/data/is_multi_creative",
+        "type": "boolean"
+      },
+      "media_type": {
+        "id": "/atomic_creative/data/media_type",
+        "type": "string",
+        "pattern": "(display|video|mobile)",
+        "default_value": "display"
+      },
+      "rejected_reason": {
+        "id": "/atomic_creative/data/rejected_reason",
+        "type": "string"
+      },
+      "rich_media": {
+        "id": "/atomic_creative/data/rich_media",
+        "type": "boolean"
+      },
+      "rich_media_provider": {
+        "id": "/atomic_creative/data/rich_media_provider",
+        "type": "string"
+      },
+      "start_date": {
+        "id": "/atomic_creative/data/start_date",
+        "type": "string"
+      },
+      "status": {
+        "id": "/atomic_creative/data/status",
+        "type": "boolean"
+      },
+      "t1as": {
+        "id": "/atomic_creative/data/t1as",
+        "type": "boolean",
+        "readonly": true
+      },
+      "tag": {
+        "id": "/atomic_creative/data/tag",
+        "type": "string"
+      },
+      "tag_type": {
+        "id": "/atomic_creative/data/tag_type",
+        "type": "string",
+        "pattern": "(IFRAME|IMG|NOSCRIPT|SCRIPT)",
+        "default_value": "NOSCRIPT"
+      },
+      "tpas_ad_tag": {
+        "id": "/atomic_creative/data/tpas_ad_tag",
+        "type": "string"
+      },
+      "tpas_ad_tag_name": {
+        "id": "/atomic_creative/data/tpas_ad_tag_name",
+        "type": "string"
+      },
+      "width": {
+        "id": "/atomic_creative/data/width",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "ad_server_type",
+      "advertiser_id",
+      "concept_id",
+      "external_identifier",
+      "file_type",
+      "height",
+      "width",
+      "tag",
+      "tag_type",
+      "tpas_ad_tag_name"
+    ]
   },
-  "required": [
-    "data",
-    "meta"
+  "allOf": [
+    {
+      "$ref": "entity.json#/entity"
+    },
+    {
+      "$ref": "#/atomic_creative"
+    }
   ]
 }
