@@ -11,7 +11,7 @@ class Entity {
     private connection;
 
     constructor(name:string, connection, id?:number) {
-        var that = this
+        var that = this;
         this.data = {};
         this.meta = {};
         this.entity_type = name;
@@ -77,8 +77,6 @@ class Entity {
             if (typeof this.data.id != 'undefined') {
                 endpoint += "/" + this.data.id;
             }
-            console.log(endpoint)
-            console.log(form)
             this.connection.post(endpoint, form,
                 function () {
                     return that.update_entity.apply(that, arguments)
