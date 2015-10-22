@@ -1,22 +1,18 @@
 {
-  "id": "/ad_server",
-  "type": "object",
-  "properties": {
-    "id": {
-      "id": "/ad_server/data/id",
-      "type": "integer",
-      "readonly": true
+  "ad_server": {
+    "id": "/ad_server",
+    "type": "object",
+    "properties": {
     },
-    "version": {
-      "id": "/ad_server/data/version",
-      "type": "integer"
-    },
-    "name": {
-      "id": "/ad_server/data/name",
-      "type": "string"
-    }
+    "required": [
+    ]
   },
-  "required": [
-    "name"
+  "allOf": [
+    {
+      "$ref": "entity.json#/entity"
+    },
+    {
+      "$ref": "#/ad_server"
+    }
   ]
 }
