@@ -34,14 +34,28 @@
       "ad_format": {
         "id": "/atomic_creative/data/ad_format",
         "type": "string",
-        "pattern": "(DISPLAY|EXPANDABLE|MOBILE)",
-        "default_value": "DISPLAY"
+        "pattern": "DISPLAY",
+        "EXPANDABLE",
+        "MOBILE",
+        "default": "DISPLAY"
       },
       "ad_server_type": {
         "id": "/atomic_creative/data/ad_server_type",
-        "type": "string",
-        "pattern": "(ATLAS|DART|EYEWONDER|MEDIAMIND|MEDIAPLEX|POINTROLL|YIELD_MANAGER|TERMINALONE|MEDIAFORGE|OTHER)",
-        "default_value": "OTHER"
+        "type": {
+          "enum": [
+            "ATLAS",
+            "DART",
+            "EYEWONDER",
+            "MEDIAMIND",
+            "MEDIAPLEX",
+            "POINTROLL",
+            "YIELD_MANAGER",
+            "TERMINALONE",
+            "MEDIAFORGE",
+            "OTHER"
+          ]
+        },
+        "default": "OTHER"
       },
       "approval_status": {
         "id": "/atomic_creative/data/approval_status",
@@ -94,13 +108,18 @@
       "expansion_direction": {
         "id": "/atomic_creative/data/expansion_direction",
         "type": "string",
-        "default_value": "NONRESTRICTED"
+        "default": "NONRESTRICTED"
       },
       "expansion_trigger": {
         "id": "/atomic_creative/data/expansion_trigger",
-        "type": "string",
-        "pattern": "(AUTOMATIC|MOUSEOVER|CLICK)",
-        "default_value": "CLICK"
+        "type": {
+          "enum": [
+            "AUTOMATIC",
+            "MOUSEOVER",
+            "CLICK"
+          ]
+        },
+        "default": "CLICK"
       },
       "external_identifier": {
         "id": "/atomic_creative/data/external_identifier",
@@ -108,9 +127,21 @@
       },
       "file_type": {
         "id": "/atomic_creative/data/file_type",
-        "type": "string",
-        "pattern": "(swf|gif|html5|jpg|jpeg|tif|tiff|png|unknown|vast)",
-        "default_value": "unknown"
+        "type": {
+          "enum": [
+            "swf",
+            "gif",
+            "html5",
+            "jpg",
+            "jpeg",
+            "tif",
+            "tiff",
+            "png",
+            "unknown",
+            "vast"
+          ]
+        },
+        "default": "unknown"
       },
       "has_sound": {
         "id": "/atomic_creative/data/has_sound",
@@ -130,9 +161,14 @@
       },
       "media_type": {
         "id": "/atomic_creative/data/media_type",
-        "type": "string",
-        "pattern": "(display|video|mobile)",
-        "default_value": "display"
+        "type": {
+          "enum": [
+            "display",
+            "video",
+            "mobile"
+          ]
+        },
+        "default": "display"
       },
       "rejected_reason": {
         "id": "/atomic_creative/data/rejected_reason",
@@ -165,9 +201,15 @@
       },
       "tag_type": {
         "id": "/atomic_creative/data/tag_type",
-        "type": "string",
-        "pattern": "(IFRAME|IMG|NOSCRIPT|SCRIPT)",
-        "default_value": "NOSCRIPT"
+        "type": {
+          "enum": [
+            "IFRAME",
+            "IMG",
+            "NOSCRIPT",
+            "SCRIPT"
+          ]
+        },
+        "default": "NOSCRIPT"
       },
       "tpas_ad_tag": {
         "id": "/atomic_creative/data/tpas_ad_tag",
