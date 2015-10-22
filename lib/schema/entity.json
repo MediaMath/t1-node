@@ -10,7 +10,8 @@
       },
       "entity_type": {
         "id": "/entity/entity_type",
-        "type": "string"
+        "type": "string",
+        "readonly": true
       },
       "name": {
         "id": "/entity/name",
