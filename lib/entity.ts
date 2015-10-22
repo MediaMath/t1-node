@@ -20,14 +20,14 @@ class Entity {
         const jsonrefs = require('json-refs');
         const schemaDir = __dirname + "/schema";
         const schemaContent = fs.readFileSync(schemaDir + '/' + this.entity_type + ".json", "utf8");
-        var jsonrefs_options = {
+        var jsonRefsOptions = {
             depth: 2,
             location: schemaDir
         };
 
         var entity_schema = JSON.parse(schemaContent);
 
-        jsonrefs.resolveRefs(entity_schema, jsonrefs_options).then(function (results) {
+        jsonrefs.resolveRefs(entity_schema, jsonRefsOptions).then(function (results) {
             that.schema = results.resolved;
             that.schema_meta = results.metadata;
         });
@@ -67,10 +67,12 @@ class Entity {
         }
         else {
             var that = this;
-            var schema = this.schema[this.entity_type].properties;
+            var schemaAllOf = this.schema.allOf;
             var form = JSON.parse(JSON.stringify(this.data));
-            Object.keys(schema).forEach(function (key) {
-                if (schema[key].readonly) delete form[key];
+            schemaAllOf.map(function(schema) {
+                Object.keys(schema.properties).forEach(function (key) {
+                    if (schema.properties[key].readonly) delete form[key];
+                })
             });
 
             var endpoint = entitymap.get_endpoint(this.entity_type);
