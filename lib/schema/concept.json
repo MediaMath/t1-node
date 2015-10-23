@@ -1,0 +1,33 @@
+{
+  "concept": {
+    "id": "/conceot",
+    "type": "object",
+    "properties": {
+      "advertiser_id": {
+        "id": "/conceot/advertiser_id",
+        "type": "integer"
+      },"created_on": {
+        "id": "/conceot/created_on",
+        "type": "string"
+      },"status": {
+        "id": "/conceot/status",
+        "type": "boolean"
+      },"updated_on": {
+        "id": "/conceot/updated_on",
+        "type": "string"
+      }
+    },
+    "required": [
+      "advertiser_id",
+      "name"
+    ]
+  },
+  "allOf": [
+    {
+      "$ref": "common.json#/entity"
+    },
+    {
+      "$ref": "#/concept"
+    }
+  ]
+}
