@@ -4,7 +4,8 @@ var entitymap = {
     'advertiser': 'advertisers',
     'agency': 'agencies',
     'campaign': 'campaigns',
-    'concept': 'concepts'
+    'concept': 'concepts',
+    'creative': 'creatives'
 };
 
 export function get_endpoint(entity:string) {
