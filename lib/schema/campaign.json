@@ -25,7 +25,7 @@
       },
       "agency_fee_pct": {
         "id": "/campaign/agency_fee_pct",
-        "type": "number"
+        "type": "string"
       },
       "conversion_type": {
         "id": "/campaign/conversion_type",
@@ -87,8 +87,7 @@
         "default": "no-limit"
       },
       "goal_alert": {
-        "id": "/campaign/goal_alert",
-        "type": "number"
+        "type": "string"
       },
       "goal_category": {
         "id": "/campaign/goal_category",
@@ -114,8 +113,7 @@
         }
       },
       "goal_value": {
-        "id": "/campaign/goal_value",
-        "type": "number"
+        "$ref": "common.json#/currency_array"
       },
       "has_custom_attribution": {
         "id": "/campaign/has_custom_attribution",
@@ -135,7 +133,7 @@
       },
       "margin_pct": {
         "id": "/campaign/margin_pct",
-        "type": "number"
+        "type": "string"
       },
       "merit_pixel_id": {
         "id": "/campaign/merit_pixel_id",
@@ -151,7 +149,7 @@
       },
       "pv_pct": {
         "id": "/campaign/pv_pct",
-        "type": "number"
+        "type": "string"
       },
       "pv_window_minutes": {
         "id": "/campaign/pv_window_minutes",
@@ -188,8 +186,7 @@
         "type": "boolean"
       },
       "total_budget": {
-        "id": "/campaign/total_budget",
-        "type": "number"
+        "$ref": "common.json#/currency_array"
       },
       "updated_on": {
         "id": "/campaign/updated_on",
@@ -222,7 +219,7 @@
   },
   "allOf": [
     {
-      "$ref": "entity.json#/entity"
+      "$ref": "common.json#/entity"
     },
     {
       "$ref": "#/campaign"

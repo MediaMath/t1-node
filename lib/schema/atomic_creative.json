@@ -239,7 +239,7 @@
   },
   "allOf": [
     {
-      "$ref": "entity.json#/entity"
+      "$ref": "common.json#/entity"
     },
     {
       "$ref": "#/atomic_creative"
