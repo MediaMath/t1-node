@@ -9,7 +9,7 @@
   },
   "allOf": [
     {
-      "$ref": "entity.json#/entity"
+      "$ref": "common.json#/entity"
     },
     {
       "$ref": "#/ad_server"
