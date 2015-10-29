@@ -17,12 +17,6 @@
     "request": "^2.64.0"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-typescript": "^0.7.0",
-    "typescript": "1.6.2"
-  },
-  "scripts": {
-    "build": "tsc",
-    "prepublish": "tsc"
+    "grunt": "^0.4.5"
   }
 }
