@@ -1,8 +1,8 @@
 {
   "advertiser": {
+    "id": "/advertiser",
+    "type": "object",
     "properties": {
-      "id": "/advertiser",
-      "type": "object",
       "minimize_multi_ads": {
         "id": "/advertiser/data/minimize_multi_ads",
         "type": "boolean"

@@ -17,17 +17,14 @@ var config = {
 ```
 
 #### Single Entities
-
-
 ``` js
 var connection = t1.T1Connection(config, console.log);
-var agency = t1.Entity('agency', connection, 1234);
+var agencyPromise = t1.Entity('agency', connection, 1234).then(function(agency) {this.agency = agency});
 agency.data.name = 'new name';
-agency.save();
+agency.save().done(console.log('saved');
 ```
 
 ##### Entity Lists
-
 ``` js
 var service = new t1.Service(t1conf);
 var userParams = {
