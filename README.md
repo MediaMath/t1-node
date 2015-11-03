@@ -26,10 +26,10 @@ agency.save().done(console.log('saved');
 
 ##### Entity Lists
 ``` js
-var service = new t1.Service(t1conf);
+var mm = new t1.EntityList(t1conf);
 var userParams = {
-  'endpoint': 'campaigns',
-  'count':10
+  'page_limit':10
   };
-service.get(userParams,  console.log);
+var listPromise = mm.get('campaigns',  userParams).then(function(list) {this.pg1 = list});
+var listPromise = pg1.getNextPage().then(function(list) {this.pg2 = list});
 ```
