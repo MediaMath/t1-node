@@ -30,6 +30,6 @@ var mm = new t1.EntityList(t1conf);
 var userParams = {
   'page_limit':10
   };
-var listPromise = mm.get('campaigns',  userParams).then(function(list) {this.pg1 = list});
-var listPromise = pg1.getNextPage().then(function(list) {this.pg2 = list});
+mm.get('campaigns',  userParams).then(function(list) {this.pg1 = list});
+mm.getNextPage(pg1).then(function(list) {this.pg2 = list});
 ```
