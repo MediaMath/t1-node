@@ -1,30 +1,52 @@
 var Q = require('q');
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
-
-
 var t1 = require('../index');
-userParams = {'endpoint': 'campaigns', 'count': 10};
-t1conf = {
-    'user': process.env.T1_API_USERNAME,
-    'password': process.env.T1_API_PASSWORD,
-    'api_key': process.env.T1_API_KEY
+
+var loadFixture = function(fixtureName) {
+    var fs = require("fs");
+    return fs.readFileSync(__dirname + '/fixtures' + '/' + fixtureName + ".json", "utf8");
 };
 
-describe("entityList", function () {
-    describe("#get with count", function () {
-        var userParams = {'page_limit': 10};
 
-        var service = new t1.EntityList(t1conf);
 
-        var campaigns = service.get('campaigns', userParams);
+describe("entity", function () {
 
-        it("should have ten entities", function () {
-            return expect(campaigns).to.eventually.have.property('entities')
-            return expect(campaigns).to.eventually.have.property('entityCount')
-            return expect(campaigns).to.eventually.have.property('next_page')
+    var connectionStub =  {};
+    connectionStub.get = function() { };
+    connectionStub.post = function() { };
+    var sandbox, getStub, postStub;
+    var parsedResult = "aisdaiusd";
+
+    beforeEach(function() {
+        sandbox = sinon.sandbox.create();
+        getStub = sandbox.stub(connectionStub, "get").returns(Q(parsedResult));
+        postStub = sandbox.stub(connectionStub, "post").returns(Q(parsedResult));
+    });
+
+    afterEach(function() {
+        sandbox.restore();
+    });
+
+    describe("#get single campaign", function () {
+        parsedResult = loadFixture('campaign');
+
+        var campaign = new t1.Entity('campaign');
+
+        it("should have a populated campaign entity", function () {
+            campaign = campaign.get(10000, connectionStub);
+
+            return expect(campaign).to.eventually
+                    .have.deep.property('data.id', 10000) &&
+                expect(campaign).to.eventually
+                    .have.deep.property('data.entity_type', 'campaign')
         });
 
     });
+
 });
+
+
+
+
 

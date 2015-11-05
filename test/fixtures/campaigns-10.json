@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 1",
+      "id": 1
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 2",
+      "id": 2
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 3",
+      "id": 3
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 4",
+      "id": 4
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 5",
+      "id": 5
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 6",
+      "id": 6
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 7",
+      "id": 7
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 8",
+      "id": 8
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 9",
+      "id": 9
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 10",
+      "id": 10
+    }
+  ],
+  "meta": {
+    "next_page": "https://api.mediamath.com/api/v2.0/campaigns?page_offset=100&api_key=q6su6nn9fjsamr37p5tv5kc5",
+    "etag": "2f5baa394203cee2b85dfac0f179bb6e5b8e4022",
+    "count": 10,
+    "called_on": "2015-11-09T12:04:23+0000",
+    "status": "ok",
+    "offset": 0,
+    "total_count": "1896"
+  }
+}
