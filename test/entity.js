@@ -19,12 +19,34 @@ describe("entityList", function () {
 
         var campaigns = service.get('campaigns', userParams);
 
-        it("should have ten entities", function () {
-            return expect(campaigns).to.eventually.have.property('entities')
-            return expect(campaigns).to.eventually.have.property('entityCount')
-            return expect(campaigns).to.eventually.have.property('next_page')
+        it("should have 10 entities", function () {
+            return expect(campaigns).to.eventually
+                    .have.property('entities')
+                    .and.have.length(userParams.page_limit) &&
+                expect(campaigns).to.eventually
+                    .have.property('entityCount', userParams.page_limit) &&
+                expect(campaigns).to.eventually.have.property('next_page')
+        });
+
+    });
+    describe("#get first page", function () {
+        var userParams = {};
+        const expectedEntityCount = 100;
+
+        var service = new t1.EntityList(t1conf);
+
+        var campaigns = service.get('campaigns', userParams);
+
+        it("should have 100 entities", function () {
+            return expect(campaigns).to.eventually
+                    .have.property('entities')
+                    .and.have.length(expectedEntityCount) &&
+                expect(campaigns).to.eventually
+                    .have.property('entityCount', expectedEntityCount) &&
+                expect(campaigns).to.eventually.have.property('next_page')
         });
 
     });
 });
+
 
