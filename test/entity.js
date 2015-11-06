@@ -11,6 +11,11 @@ t1conf = {
     'api_key': process.env.T1_API_KEY
 };
 
+var loadFixture = function(fixtureName) {
+    var fs = require("fs");
+    return fs.readFileSync(__dirname + '/fixtures' + '/' + fixtureName + ".json", "utf8");
+};
+
 describe("entityList", function () {
     describe("#get with count", function () {
         var userParams = {'page_limit': 10};
@@ -48,5 +53,47 @@ describe("entityList", function () {
 
     });
 });
+
+
+describe("entity", function () {
+
+    var connectionStub =  {};
+    connectionStub.get = function() { };
+    connectionStub.post = function() { };
+    var sandbox, getStub, postStub;
+    var parsedResult = "aisdaiusd";
+
+    beforeEach(function() {
+        console.log('BEFORE');
+
+        getStub = sinon.stub(connectionStub, "get").returns(Q(parsedResult));
+        postStub = sinon.stub(connectionStub, "post").returns(Q(parsedResult));
+    });
+
+    afterEach(function() {
+        console.log('AFTER');
+    });
+
+    describe("#get single campaign", function () {
+        //getStub = sinon.stub(connectionStub, "get").returns(Q(parsedResult));
+
+        parsedResult = loadFixture('campaign');
+        var campaign = new t1.Entity('campaign');
+        console.log(connectionStub.get('lol'))
+        campaign = campaign.get(220335, connectionStub);
+        var refdata = require('./refdata/campaign').data;
+
+        it("should have a populated campaign entity", function () {
+            return expect(campaign).to.eventually
+                .have.property('data')
+                .and.be.eql(refdata)
+                .done()
+        });
+
+    });
+});
+
+
+
 
 
