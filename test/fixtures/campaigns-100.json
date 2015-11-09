@@ -1,0 +1,513 @@
+{
+  "data": [
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 1",
+      "id": 1
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 2",
+      "id": 2
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 3",
+      "id": 3
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 4",
+      "id": 4
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 5",
+      "id": 5
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 6",
+      "id": 6
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 7",
+      "id": 7
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 8",
+      "id": 8
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 9",
+      "id": 9
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 10",
+      "id": 10
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 11",
+      "id": 11
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 12",
+      "id": 12
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 13",
+      "id": 13
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 14",
+      "id": 14
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 15",
+      "id": 15
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 16",
+      "id": 16
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 17",
+      "id": 17
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 18",
+      "id": 18
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 19",
+      "id": 19
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 20",
+      "id": 20
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 21",
+      "id": 21
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 22",
+      "id": 22
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 23",
+      "id": 23
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 24",
+      "id": 24
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 25",
+      "id": 25
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 26",
+      "id": 26
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 27",
+      "id": 27
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 28",
+      "id": 28
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 29",
+      "id": 29
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 30",
+      "id": 30
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 31",
+      "id": 31
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 32",
+      "id": 32
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 33",
+      "id": 33
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 34",
+      "id": 34
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 35",
+      "id": 35
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 36",
+      "id": 36
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 37",
+      "id": 37
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 38",
+      "id": 38
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 39",
+      "id": 39
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 40",
+      "id": 40
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 41",
+      "id": 41
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 42",
+      "id": 42
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 43",
+      "id": 43
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 44",
+      "id": 44
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 45",
+      "id": 45
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 46",
+      "id": 46
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 47",
+      "id": 47
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 48",
+      "id": 48
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 49",
+      "id": 49
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 50",
+      "id": 50
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 51",
+      "id": 51
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 52",
+      "id": 52
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 53",
+      "id": 53
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 54",
+      "id": 54
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 55",
+      "id": 55
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 56",
+      "id": 56
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 57",
+      "id": 57
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 58",
+      "id": 58
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 59",
+      "id": 59
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 60",
+      "id": 60
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 61",
+      "id": 61
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 62",
+      "id": 62
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 63",
+      "id": 63
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 64",
+      "id": 64
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 65",
+      "id": 65
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 66",
+      "id": 66
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 67",
+      "id": 67
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 68",
+      "id": 68
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 69",
+      "id": 69
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 70",
+      "id": 70
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 71",
+      "id": 71
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 72",
+      "id": 72
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 73",
+      "id": 73
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 74",
+      "id": 74
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 75",
+      "id": 75
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 76",
+      "id": 76
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 77",
+      "id": 77
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 78",
+      "id": 78
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 79",
+      "id": 79
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 80",
+      "id": 80
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 81",
+      "id": 81
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 82",
+      "id": 82
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 83",
+      "id": 83
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 84",
+      "id": 84
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 85",
+      "id": 85
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 86",
+      "id": 86
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 87",
+      "id": 87
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 88",
+      "id": 88
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 89",
+      "id": 89
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 90",
+      "id": 90
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 91",
+      "id": 91
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 92",
+      "id": 92
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 93",
+      "id": 93
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 94",
+      "id": 94
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 95",
+      "id": 95
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 96",
+      "id": 96
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 97",
+      "id": 97
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 98",
+      "id": 98
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 99",
+      "id": 99
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 100",
+      "id": 100
+    }
+  ],
+  "meta": {
+    "next_page": "https://api.mediamath.com/api/v2.0/campaigns?page_offset=100&api_key=q6su6nn9fjsamr37p5tv5kc5",
+    "etag": "2f5baa394203cee2b85dfac0f179bb6e5b8e4022",
+    "count": 100,
+    "called_on": "2015-11-09T12:04:23+0000",
+    "status": "ok",
+    "offset": 0,
+    "total_count": "1896"
+  }
+}
