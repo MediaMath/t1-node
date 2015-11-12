@@ -1,4 +1,4 @@
-var Q = require('q');
+var Promise = require('bluebird');
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
 var t1 = require('../index');
@@ -20,8 +20,8 @@ describe("entity", function () {
 
     beforeEach(function() {
         sandbox = sinon.sandbox.create();
-        getStub = sandbox.stub(connectionStub, "get").returns(Q(parsedResult));
-        postStub = sandbox.stub(connectionStub, "post").returns(Q(parsedResult));
+        getStub = sandbox.stub(connectionStub, "get").returns(Promise.try(function() {return parsedResult}));
+        postStub = sandbox.stub(connectionStub, "post").returns(Promise.try(function() {return parsedResult}));
     });
 
     afterEach(function() {

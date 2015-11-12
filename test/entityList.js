@@ -1,4 +1,4 @@
-var Q = require('q');
+var Promise = require('bluebird');
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
 
@@ -25,8 +25,9 @@ describe("entityList", function () {
 
     beforeEach(function () {
         sandbox = sinon.sandbox.create();
-        getStub = sandbox.stub(connectionStub, "get").returns(Q(parsedResult));
-        postStub = sandbox.stub(connectionStub, "post").returns(Q(parsedResult));
+
+        postStub = sandbox.stub(connectionStub, "post")
+            .returns(Promise.try(function() {return parsedResult}));
     });
 
     afterEach(function () {
@@ -36,37 +37,40 @@ describe("entityList", function () {
     describe("#get with count", function () {
         var userParams = {'page_limit': 10};
 
-        parsedResult = loadFixture('campaigns-10');
-
         it("should have 10 entities", function () {
+            parsedResult = loadFixture('campaigns-10');
+
+            getStub = sandbox.stub(connectionStub, "get")
+                .returns(Promise.try(function() {return parsedResult}));
             var campaigns = service.get('campaigns', userParams);
-            expect(getStub.callCount).to.eventually.be.equal(1);
+
+            return expect(campaigns).to.eventually
+                .have.property('entities') &&
 
             expect(campaigns).to.eventually
-                .have.property('entities')
-                .and.have.length(userParams.page_limit);
-            expect(campaigns).to.eventually
-                .have.property('entityCount', userParams.page_limit);
-            expect(campaigns).to.eventually.have.property('next_page')
+                .have.property('meta')
+                .and.have.property('count', userParams.page_limit);
+
+
         });
     });
 
     describe("#get first page", function () {
-        var userParams = {};
         const expectedEntityCount = 100;
-        parsedResult = loadFixture('campaigns-100');
+        var userParams = {};
 
 
         it("should have 100 entities", function () {
-            var campaigns = service.get('campaigns', userParams);
-            expect(getStub.callCount).to.be.equal(1);
+            parsedResult = loadFixture('campaigns-100');
 
+            getStub = sandbox.stub(connectionStub, "get")
+                .returns(Promise.try(function() {return parsedResult}));
+            var campaigns = service.get('campaigns', userParams);
+
+            return expect(campaigns).to.eventually
+                .have.property('entities') &&
             expect(campaigns).to.eventually
-                .have.property('entities')
-                .and.have.length(expectedEntityCount);
-            expect(campaigns).to.eventually
-                .have.property('entityCount', expectedEntityCount);
-            expect(campaigns).to.eventually.have.property('next_page')
+                .have.property('meta').and.have.property('next_page');
         });
 
     });
