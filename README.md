@@ -17,14 +17,22 @@ var config = {
 ```
 
 #### Single Entities
+
+Retrieve, edit and save a single entity
+
 ``` js
-var connection = t1.T1Connection(config, console.log);
-var agencyPromise = t1.Entity('agency', connection, 1234).then(function(agency) {this.agency = agency});
+var connection = t1.T1Connection(config);
+var agencyPromise = new t1.Entity('agency')
+  .get(1234. connection)
+  .then(function(agency) {this.agency = agency});
 agency.data.name = 'new name';
-agency.save().done(console.log('saved');
+agency.save(conn).done(console.log('saved');
 ```
 
 ##### Entity Lists
+
+Returns a generator to entities
+
 ``` js
 var mm = new t1.EntityList(t1conf);
 var userParams = {
@@ -32,4 +40,6 @@ var userParams = {
   };
 mm.get('campaigns',  userParams).then(function(list) {this.pg1 = list});
 mm.getNextPage(pg1).then(function(list) {this.pg2 = list});
+
+for (var entity of pg1.entities) {console.log(entity)}
 ```
