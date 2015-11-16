@@ -33,10 +33,13 @@
       },
       "ad_format": {
         "id": "/atomic_creative/data/ad_format",
-        "type": "string",
-        "pattern": "DISPLAY",
-        "EXPANDABLE",
-        "MOBILE",
+        "type": {
+          "enum": [
+            "DISPLAY",
+            "EXPANDABLE",
+            "MOBILE"
+          ]
+        },
         "default": "DISPLAY"
       },
       "ad_server_type": {
