@@ -44,7 +44,8 @@
       },
       "created_on": {
         "id": "/campaign/created_on",
-        "type": "string"
+        "type": "string",
+        "readonly": true
       },
       "currency_code": {
         "id": "/campaign/currency_code",
@@ -129,7 +130,8 @@
       },
       "initial_start_date": {
         "id": "/campaign/initial_start_date",
-        "type": "string"
+        "type": "string",
+        "readonly" : true
       },
       "margin_pct": {
         "id": "/campaign/margin_pct",
@@ -190,7 +192,8 @@
       },
       "updated_on": {
         "id": "/campaign/updated_on",
-        "type": "string"
+        "type": "string",
+        "readonly": true
       },
       "use_default_ad_server": {
         "id": "/campaign/use_default_ad_server",
