@@ -58,6 +58,10 @@
         "type": "string",
         "readonly": true
       },
+      "vertical_id": {
+        "id": "/advertiser/data/vertical_id",
+        "type": "integer"
+      },
       "created_on": {
         "id": "/advertiser/data/created_on",
         "type": "string",
