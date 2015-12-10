@@ -6,15 +6,20 @@
       "advertiser_id": {
         "id": "/concept/advertiser_id",
         "type": "integer"
-      },"created_on": {
+      },
+      "created_on": {
         "id": "/concept/created_on",
-        "type": "string"
-      },"status": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status": {
         "id": "/concept/status",
         "type": "boolean"
-      },"updated_on": {
+      },
+      "updated_on": {
         "id": "/concept/updated_on",
-        "type": "string"
+        "type": "string",
+        "format": "date-time"
       }
     },
     "required": [

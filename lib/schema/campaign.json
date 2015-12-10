@@ -57,7 +57,8 @@
       },
       "end_date": {
         "id": "/campaign/end_date",
-        "type": "string"
+        "type": "string",
+        "format": "date-time"
       },
       "frequency_amount": {
         "id": "/campaign/frequency_amount",
@@ -131,6 +132,7 @@
       "initial_start_date": {
         "id": "/campaign/initial_start_date",
         "type": "string",
+        "format": "date-time",
         "readonly" : true
       },
       "margin_pct": {
@@ -181,7 +183,8 @@
       },
       "start_date": {
         "id": "/campaign/start_date",
-        "type": "string"
+        "type": "string",
+        "format": "date-time"
       },
       "status": {
         "id": "/campaign/status",
@@ -193,6 +196,7 @@
       "updated_on": {
         "id": "/campaign/updated_on",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       },
       "use_default_ad_server": {
