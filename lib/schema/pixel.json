@@ -14,10 +14,11 @@
       "pixel_type": {
         "id": "/pixel/pixel_type",
         "type": {
-        "enum": [
-          "USER",
-          "INTERNAL"
-        ]
+          "enum": [
+            "USER",
+            "INTERNAL"
+          ]
+        }
       },
       "supply_source_id": {
         "id": "/pixel/supply_source_id",
@@ -30,11 +31,13 @@
       "created_on": {
         "id": "/pixel/created_on",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       },
       "updated_on": {
         "id": "/pixel/updated_on",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       }
     },

@@ -22,11 +22,13 @@
       "updated_on": {
         "id": "/agency/data/updated_on",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       },
       "created_on": {
         "id": "/agency/data/created_on",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       }
     },
