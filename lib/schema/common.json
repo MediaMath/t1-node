@@ -42,5 +42,14 @@
     },
     "minItems": 1,
     "uniqueItems": true
+  },
+  "logical_and_or": {
+    "type": {
+      "enum": [
+        "AND",
+        "OR"
+      ]
+    },
+    "default": "OR"
   }
 }
