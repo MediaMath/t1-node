@@ -8,7 +8,7 @@
         "type": "integer"
       },
       "supply_source_id": {
-        "id": "/strategy_domain/concept_id",
+        "id": "/strategy_domain/supply_source_id",
         "type": "integer"
       }
     },

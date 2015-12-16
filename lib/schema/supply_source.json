@@ -77,7 +77,7 @@
         "type": "boolean"
       },
       "supply_type": {
-        "id": "/supply_source/rtb_type",
+        "id": "/supply_source/supply_type",
         "type": {
           "enum": [
             "exchange",
@@ -92,6 +92,7 @@
       "created_on": {
         "id": "/supply_source/created_on",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       },
       "updated_on": {

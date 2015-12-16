@@ -123,11 +123,13 @@
       "created_on": {
         "id": "/pixel_bundle/created_on",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       },
       "updated_on": {
         "id": "/pixel_bundle/updated_on",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       }
     },

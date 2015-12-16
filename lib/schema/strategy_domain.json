@@ -12,7 +12,7 @@
         "type": "string"
       },
       "strategy_id": {
-        "id": "/strategy_domain/concept_id",
+        "id": "/strategy_domain/strategy_id",
         "type": "integer"
       },
       "created_on": {
