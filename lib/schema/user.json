@@ -127,6 +127,18 @@
         "id": "/user/username",
         "type": "string"
       },
+      "view_data_definition": {
+        "id": "/user/view_data_definition",
+        "type": "boolean"
+      },
+      "view_dmp_reports": {
+        "id": "/user/view_dmp_reports",
+        "type": "boolean"
+      },
+      "view_segments": {
+        "id": "/user/view_segments",
+        "type": "boolean"
+      },
       "view_organizations": {
         "id": "/user/view_organizations",
         "type": "boolean"
