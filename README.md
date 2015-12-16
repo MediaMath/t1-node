@@ -23,7 +23,7 @@ Retrieve, edit and save a single entity
 ``` js
 var connection = t1.T1Connection(config);
 var agencyPromise = new t1.Entity('agency')
-  .get(1234. connection)
+  .get(1234, connection)
   .then(function(agency) {this.agency = agency});
 agency.data.name = 'new name';
 agency.save(conn).done(console.log('saved');
