@@ -1,0 +1,31 @@
+{
+  "vertical": {
+    "id": "/vertical",
+    "type": "object",
+    "properties": {
+      "created_on": {
+        "id": "/vertical/created_on",
+        "type": "string",
+        "format": "date-time",
+        "readonly": true
+      },
+      "updated_on": {
+        "id": "/vertical/updated_on",
+        "type": "string",
+        "format": "date-time",
+        "readonly": true
+      }
+    },
+    "required": [
+      "name"
+    ]
+  },
+  "allOf": [
+    {
+      "$ref": "common.json#/entity"
+    },
+    {
+      "$ref": "#/vertical"
+    }
+  ]
+}
