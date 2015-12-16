@@ -219,6 +219,7 @@
       "created_on": {
         "id": "/strategy/created_on",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       },
       "updated_on": {
