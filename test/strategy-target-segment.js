@@ -2,12 +2,7 @@ var Promise = require('bluebird');
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
 var t1 = require('../index');
-
-var loadFixture = function (fixtureName) {
-    var fs = require("fs");
-    return fs.readFileSync(__dirname + '/fixtures' + '/' + fixtureName + ".json", "utf8");
-};
-
+var common = require('./test-common');
 
 describe("strategy target segments", function () {
 
@@ -34,7 +29,7 @@ describe("strategy target segments", function () {
     });
 
     describe("#get strategy target segments", function () {
-        parsedResult = loadFixture('strategy-targeting-segments');
+        parsedResult = common.loadFixture('strategy-targeting-segments');
 
         var targetingSegments = new t1.StrategyTargetSegments();
 
@@ -46,7 +41,7 @@ describe("strategy target segments", function () {
 
                 expect(targetingSegments).to.eventually
                     .have.property('include')
-                    .and.deep.equal([[119, 'OR'],[118, 'OR']]) &&
+                    .and.deep.equal([[119, 'OR'], [118, 'OR']]) &&
                 expect(targetingSegments).to.eventually
                     .have.property('exclude')
                     .and.deep.equal([[1, 'OR']]);
