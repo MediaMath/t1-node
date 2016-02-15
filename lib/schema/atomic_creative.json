@@ -6,21 +6,25 @@
       "build_date": {
         "id": "/atomic_creative/data/build_date",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       },
       "created_on": {
         "id": "/atomic_creative/data/created_on",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       },
       "last_modified": {
         "id": "/atomic_creative/data/last_modified",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       },
       "updated_on": {
         "id": "/atomic_creative/data/updated_on",
         "type": "string",
+        "format": "date-time",
         "readonly": true
       },
       "version": {
@@ -96,17 +100,14 @@
         "id": "/atomic_creative/data/creative_import_file_id",
         "type": "int"
       },
-      "creative_import_file_id": {
-        "id": "/atomic_creative/data/creative_import_file_id",
-        "type": "int"
-      },
       "edited_tag": {
         "id": "/atomic_creative/data/edited_tag",
         "type": "string"
       },
       "end_date": {
         "id": "/atomic_creative/data/end_date",
-        "type": "string"
+        "type": "string",
+        "format": "date-time"
       },
       "expansion_direction": {
         "id": "/atomic_creative/data/expansion_direction",
@@ -187,7 +188,8 @@
       },
       "start_date": {
         "id": "/atomic_creative/data/start_date",
-        "type": "string"
+        "type": "string",
+        "format": "date-time"
       },
       "status": {
         "id": "/atomic_creative/data/status",

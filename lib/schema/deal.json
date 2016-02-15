@@ -1,0 +1,130 @@
+{
+  "deal": {
+    "id": "/deal",
+    "type": "object",
+    "properties": {
+      "advertiser_id": {
+        "id": "/deal/advertiser_id",
+        "type": "integer"
+      },
+      "currency_code": {
+        "id": "/deal/currency_code",
+        "type": "string"
+      },
+      "deal_identifier": {
+        "id": "/deal/deal_identifier",
+        "type": "string"
+      },
+      "deal_source": {
+        "id": "/deal/deal_source",
+        "type": {
+          "enum": [
+          "USER",
+          "INTERNAL"
+        ]
+      },
+        "default": "INTERNAL"
+      },
+      "description": {
+        "id": "/deal/description",
+        "type": "string"
+      },
+      "start_datetime": {
+        "id": "/deal/start_datetime",
+        "type": "string",
+        "format": "date-time"
+      },
+      "end_datetime": {
+        "id": "/deal/end_datetime",
+        "type": "string",
+        "format": "date-time"
+      },
+      "media_type": {
+        "id": "/deal/media_type",
+        "type": {
+          "enum": [
+            "DISPLAY",
+            "VIDEO"
+          ]
+        },
+        "default": "DISPLAY"
+      },
+      "partner_sourced": {
+        "id": "/deal/partner_sourced",
+        "type": "boolean"
+      },
+      "price": {
+        "$ref": "common.json#/currency_array"
+      },
+      "price_method": {
+        "id": "/deal/price_method",
+        "type": {
+          "enum": [
+            "CPM"
+          ]
+        },
+        "default": "CPM"
+      },
+      "price_type": {
+        "id": "/deal/price_type",
+        "type": {
+          "enum": [
+            "FIXED",
+            "FLOOR"
+          ]
+        }
+      },
+      "publisher_id": {
+        "id": "/deal/publisher_id",
+        "type": "integer"
+      },
+      "status": {
+        "id": "/deal/status",
+        "type": "boolean"
+      },
+      "supply_source_id": {
+        "id": "/deal/supply_source_id",
+        "type": "integer"
+      },
+      "zone_name": {
+        "id": "/deal/zone_name",
+        "type": "string"
+      },
+      "created_on": {
+        "id": "/deal/created_on",
+        "type": "string",
+        "format": "date-time",
+        "readonly": true
+      },
+      "updated_on": {
+        "id": "/deal/updated_on",
+        "type": "string",
+        "format": "date-time",
+        "readonly": true
+      }
+    },
+    "required": [
+      "advertiser_id",
+      "start_datetime",
+      "end_datetime",
+      "deal_identifier",
+      "media_type",
+      "name",
+      "price",
+      "price_method",
+      "price_method",
+      "price_type",
+      "publisher_id",
+      "status",
+      "supply_source_id"
+    ]
+  },
+  "allOf": [
+    {
+      "$ref": "common.json#/entity"
+    },
+    {
+      "$ref": "#/deal"
+    }
+  ]
+}
