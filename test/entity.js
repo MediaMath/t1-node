@@ -2,34 +2,34 @@ var Promise = require('bluebird');
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
 var t1 = require('../index');
-
-var loadFixture = function(fixtureName) {
-    var fs = require("fs");
-    return fs.readFileSync(__dirname + '/fixtures' + '/' + fixtureName + ".json", "utf8");
-};
-
-
+var common = require('./test-common.js');
 
 describe("entity", function () {
 
-    var connectionStub =  {};
-    connectionStub.get = function() { };
-    connectionStub.post = function() { };
+    var connectionStub = {};
+    connectionStub.get = function () {
+    };
+    connectionStub.post = function () {
+    };
     var sandbox, getStub, postStub;
     var parsedResult = "aisdaiusd";
 
-    beforeEach(function() {
+    beforeEach(function () {
         sandbox = sinon.sandbox.create();
-        getStub = sandbox.stub(connectionStub, "get").returns(Promise.try(function() {return parsedResult}));
-        postStub = sandbox.stub(connectionStub, "post").returns(Promise.try(function() {return parsedResult}));
+        getStub = sandbox.stub(connectionStub, "get").returns(Promise.try(function () {
+            return parsedResult
+        }));
+        postStub = sandbox.stub(connectionStub, "post").returns(Promise.try(function () {
+            return parsedResult
+        }));
     });
 
-    afterEach(function() {
+    afterEach(function () {
         sandbox.restore();
     });
 
     describe("#get single campaign", function () {
-        parsedResult = loadFixture('campaign');
+        parsedResult = common.loadFixture('campaign');
 
         var campaign = new t1.Entity('campaign');
 
