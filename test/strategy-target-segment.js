@@ -1,3 +1,5 @@
+"use strict";
+
 var Promise = require('bluebird');
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
@@ -46,12 +48,34 @@ describe("strategy target segments", function () {
                     .have.property('exclude')
                     .and.deep.equal([[1, 'OR']]);
         });
-
     });
 
+    describe("#update targeting", function () {
+        parsedResult = common.loadFixture('strategy-targeting-segments');
+
+        var targetingSegments = new t1.StrategyTargetSegments();
+        targetingSegments.include = [[1, 'OR']];
+        targetingSegments.exclude = [[119, 'OR']];
+        targetingSegments.include_op = 'OR';
+        targetingSegments.exclude_op = 'OR';
+
+
+        it("should generate the correct formdata for posting", function () {
+
+            var expected = {
+                'include_op': 'OR',
+                'exclude_op': 'OR',
+                'segments.1.id': 1,
+                'segments.1.operator': 'OR',
+                'segments.1.restriction': 'INCLUDE',
+                'segments.2.id': 119,
+                'segments.2.operator': 'OR',
+                'segments.2.restriction': 'EXCLUDE'
+
+            };
+            var formdata = targetingSegments._generate_form();
+
+            return expect(formdata).to.eventually.deep.equal(expected);
+        });
+    });
 });
-
-
-
-
-
