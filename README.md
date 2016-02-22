@@ -43,3 +43,22 @@ mm.getNextPage(pg1).then(function(list) {this.pg2 = list});
 
 for (var entity of pg1.entities) {console.log(entity)}
 ```
+
+#### Targeting
+
+##### Strategy Target Segments
+To get a strategy's targeting segments:
+``` js
+var targetingSegmentsPromise = new t1.StrategyTargetSegments()
+  .get(strategy_id, connection)
+  .then(function(targetingSegments) {this.targetingSegments = targetingSegments});
+```  
+
+To edit strategy targeting segments:
+``` js
+targetingSegments.include = [[1, 'OR']];
+targetingSegments.exclude = [[119, 'OR']];
+targetingSegments.include_op = 'OR';
+targetingSegments.exclude_op = 'OR';
+targetingSegments.save(connection).done(console.log('saved');
+```
