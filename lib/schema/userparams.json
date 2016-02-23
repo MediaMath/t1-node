@@ -1,4 +1,5 @@
 {
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "allEndpoints": {
     "id": "/allEndpoints",
     "type": "object",
@@ -11,6 +12,15 @@
         },
         "minItems": 1,
         "uniqueItems": true
+      },
+      "limit": {
+        "id": "/allEndpoints/limit",
+        "type": "object",
+        "patternProperties": {
+          "^[a-zA-Z]+$": {"type": "integer"}
+        },
+        "additionalProperties": false,
+        "maxProperties": 1
       },
       "page_limit": {
         "id": "/allEndpoints/page_limit",
