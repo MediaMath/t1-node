@@ -20,7 +20,7 @@
     "chai-as-promised": "~4.1.0",
     "hoek": "^2.16.3",
     "json-refs": "^1.1.1",
-    "jsonschema": "^1.0.2",
+    "jsonschema": "^1.1.0",
     "mocha": "~2.1.0",
     "request": "^2.64.0",
     "request-promise": "^1.0.2",

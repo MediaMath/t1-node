@@ -187,11 +187,11 @@
         "default": "RTB"
       },
       "type": {
-        "id": "/strategy/supply_type",
+        "id": "/strategy/type",
         "type": {
           "enum": [
             "REM",
-            "GBP",
+            "GBO",
             "AUD"
           ]
         },
