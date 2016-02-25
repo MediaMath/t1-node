@@ -4,6 +4,7 @@ var sinon = require('sinon');
 var common = require('./test-common');
 var t1 = require('../index');
 
+
 describe("entityList", function () {
 
     var connectionStub = {};
@@ -49,14 +50,11 @@ describe("entityList", function () {
                     .have.property('meta')
                     .and.have.property('count', userParams.page_limit);
 
-
         });
     });
 
     describe("#get first page", function () {
-        const expectedEntityCount = 100;
         var userParams = {};
-
 
         it("should have 100 entities", function () {
             parsedResult = common.loadFixture('campaigns-100');
