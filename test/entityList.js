@@ -1,14 +1,8 @@
 var Promise = require('bluebird');
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
-
+var common = require('./test-common');
 var t1 = require('../index');
-
-
-var loadFixture = function (fixtureName) {
-    var fs = require("fs");
-    return fs.readFileSync(__dirname + '/fixtures' + '/' + fixtureName + ".json", "utf8");
-};
 
 describe("entityList", function () {
 
@@ -27,7 +21,9 @@ describe("entityList", function () {
         sandbox = sinon.sandbox.create();
 
         postStub = sandbox.stub(connectionStub, "post")
-            .returns(Promise.try(function() {return parsedResult}));
+            .returns(Promise.try(function () {
+                return parsedResult
+            }));
     });
 
     afterEach(function () {
@@ -38,18 +34,20 @@ describe("entityList", function () {
         var userParams = {'page_limit': 10};
 
         it("should have 10 entities", function () {
-            parsedResult = loadFixture('campaigns-10');
+            parsedResult = common.loadFixture('campaigns-10');
 
             getStub = sandbox.stub(connectionStub, "get")
-                .returns(Promise.try(function() {return parsedResult}));
+                .returns(Promise.try(function () {
+                    return parsedResult
+                }));
             var campaigns = service.get('campaigns', userParams);
 
             return expect(campaigns).to.eventually
-                .have.property('entities') &&
+                    .have.property('entities') &&
 
-            expect(campaigns).to.eventually
-                .have.property('meta')
-                .and.have.property('count', userParams.page_limit);
+                expect(campaigns).to.eventually
+                    .have.property('meta')
+                    .and.have.property('count', userParams.page_limit);
 
 
         });
@@ -61,16 +59,18 @@ describe("entityList", function () {
 
 
         it("should have 100 entities", function () {
-            parsedResult = loadFixture('campaigns-100');
+            parsedResult = common.loadFixture('campaigns-100');
 
             getStub = sandbox.stub(connectionStub, "get")
-                .returns(Promise.try(function() {return parsedResult}));
+                .returns(Promise.try(function () {
+                    return parsedResult
+                }));
             var campaigns = service.get('campaigns', userParams);
 
             return expect(campaigns).to.eventually
-                .have.property('entities') &&
-            expect(campaigns).to.eventually
-                .have.property('meta').and.have.property('next_page');
+                    .have.property('entities') &&
+                expect(campaigns).to.eventually
+                    .have.property('meta').and.have.property('next_page');
         });
 
     });
