@@ -30,13 +30,13 @@
       "updated_on": {
         "id": "/audience_segment/data/updated_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "created_on": {
         "id": "/audience_segment/data/created_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       }
     },

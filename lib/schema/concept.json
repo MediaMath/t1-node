@@ -10,7 +10,7 @@
       "created_on": {
         "id": "/concept/created_on",
         "type": "string",
-        "format": "date-time"
+        "format": "datetimezone"
       },
       "status": {
         "id": "/concept/status",
@@ -19,7 +19,7 @@
       "updated_on": {
         "id": "/concept/updated_on",
         "type": "string",
-        "format": "date-time"
+        "format": "datetimezone"
       }
     },
     "required": [

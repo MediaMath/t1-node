@@ -25,7 +25,7 @@ var connection = t1.T1Connection(config);
 var agencyPromise = new t1.Entity('agency')
   .get(1234, connection)
   .then(function(agency) {this.agency = agency});
-agency.data.name = 'new name';
+agency.name = 'new name';
 agency.save(conn).done(console.log('saved');
 ```
 
@@ -51,7 +51,7 @@ It's possible to include related entities by including in a 'with' property in u
 
 var userParams = {
   'page_limit':10
-  'with':'strategies'
+  'with':['strategies']
   };
 t1.EntityList.get('campaigns', connection,  userParams).then(function(list) {this.pg1 = list});
 t1.EntityList.getNextPage(pg1, connection).then(function(list) {this.pg2 = list});

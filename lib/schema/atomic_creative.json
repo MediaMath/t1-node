@@ -6,25 +6,25 @@
       "build_date": {
         "id": "/atomic_creative/data/build_date",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "created_on": {
         "id": "/atomic_creative/data/created_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "last_modified": {
         "id": "/atomic_creative/data/last_modified",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "updated_on": {
         "id": "/atomic_creative/data/updated_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "version": {
@@ -107,7 +107,7 @@
       "end_date": {
         "id": "/atomic_creative/data/end_date",
         "type": "string",
-        "format": "date-time"
+        "format": "datetimezone"
       },
       "expansion_direction": {
         "id": "/atomic_creative/data/expansion_direction",
@@ -189,7 +189,7 @@
       "start_date": {
         "id": "/atomic_creative/data/start_date",
         "type": "string",
-        "format": "date-time"
+        "format": "datetimezone"
       },
       "status": {
         "id": "/atomic_creative/data/status",
