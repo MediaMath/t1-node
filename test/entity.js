@@ -42,8 +42,14 @@ describe("entity", function () {
                     .have.deep.property('data.entity_type', 'campaign')
         });
 
-    });
+        it("should should have flattened currency fields", function () {
+            return expect(campaign).to.eventually
+                    .have.deep.property('data.total_budget', 50000) &&
+                expect(campaign).to.eventually
+                    .have.deep.property('data.goal_value', 50)
+        });
 
+    });
 });
 
 

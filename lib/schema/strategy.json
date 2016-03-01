@@ -30,7 +30,8 @@
         "type": "string"
       },
       "effective_goal_value": {
-        "$ref": "common.json#/currency_array"
+        "id": "/campaign/effective_goal_value",
+        "type": "number"
       },
       "end_date": {
         "id": "/strategy/end_date",
@@ -84,14 +85,16 @@
         "default": "cpc"
       },
       "goal_value": {
-        "$ref": "common.json#/currency_array"
+        "id": "/campaign/goal_value",
+        "type": "number"
       },
       "impression_cap": {
         "id": "/strategy/impression_cap",
         "type": "integer"
       },
       "max_bid": {
-        "$ref": "common.json#/currency_array"
+        "id": "/campaign/max_bid",
+        "type": "number"
       },
       "media_type": {
         "id": "/strategy/media_type",
@@ -104,7 +107,8 @@
         "default": "DISPLAY"
       },
       "pacing_amount": {
-        "$ref": "common.json#/currency_array"
+        "id": "/campaign/pacing_amount",
+        "type": "number"
       },
       "pacing_interval": {
         "id": "/strategy/pacing_interval",
@@ -198,7 +202,8 @@
         "default": "GBO"
       },
       "total_budget": {
-        "$ref": "common.json#/currency_array"
+        "id": "/campaign/total_budget",
+        "type": "number"
       },
       "use_campaign_end": {
         "id": "/strategy/use_campaign_end",
