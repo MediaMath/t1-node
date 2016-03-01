@@ -115,7 +115,8 @@
         }
       },
       "goal_value": {
-        "$ref": "common.json#/currency_array"
+        "id": "/campaign/goal_value",
+        "type": "number"
       },
       "has_custom_attribution": {
         "id": "/campaign/has_custom_attribution",
@@ -191,7 +192,8 @@
         "type": "boolean"
       },
       "total_budget": {
-        "$ref": "common.json#/currency_array"
+        "id": "/campaign/total_budget",
+        "type": "number"
       },
       "updated_on": {
         "id": "/campaign/updated_on",
