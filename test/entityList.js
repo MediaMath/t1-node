@@ -15,8 +15,7 @@ describe("entityList", function () {
     var sandbox, getStub, postStub;
     var parsedResult = "aisdaiusd";
 
-    var service = t1.EntityList.prototype;
-    service.t1connection = connectionStub;
+    var service = t1.EntityList;
 
     beforeEach(function () {
         sandbox = sinon.sandbox.create();
@@ -41,7 +40,7 @@ describe("entityList", function () {
                 .returns(Promise.try(function () {
                     return parsedResult
                 }));
-            var campaigns = service.get('campaigns', userParams);
+            var campaigns = service.get('campaigns', connectionStub, userParams);
 
             return expect(campaigns).to.eventually
                     .have.property('entities') &&
@@ -63,7 +62,7 @@ describe("entityList", function () {
                 .returns(Promise.try(function () {
                     return parsedResult
                 }));
-            var campaigns = service.get('campaigns', userParams);
+            var campaigns = service.get('campaigns', connectionStub, userParams);
 
             return expect(campaigns).to.eventually
                     .have.property('entities') &&
