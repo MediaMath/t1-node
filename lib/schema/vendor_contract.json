@@ -26,13 +26,13 @@
       "created_on": {
         "id": "/vendor_contract/created_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "updated_on": {
         "id": "/vendor_contract/updated_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       }
     },

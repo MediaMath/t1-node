@@ -25,7 +25,7 @@
       },
       "agency_fee_pct": {
         "id": "/campaign/agency_fee_pct",
-        "type": "string"
+        "type": "number"
       },
       "conversion_type": {
         "id": "/campaign/conversion_type",
@@ -58,7 +58,7 @@
       "end_date": {
         "id": "/campaign/end_date",
         "type": "string",
-        "format": "date-time"
+        "format": "datetimezone"
       },
       "frequency_amount": {
         "id": "/campaign/frequency_amount",
@@ -133,12 +133,12 @@
       "initial_start_date": {
         "id": "/campaign/initial_start_date",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly" : true
       },
       "margin_pct": {
         "id": "/campaign/margin_pct",
-        "type": "string"
+        "type": "number"
       },
       "merit_pixel_id": {
         "id": "/campaign/merit_pixel_id",
@@ -154,7 +154,7 @@
       },
       "pv_pct": {
         "id": "/campaign/pv_pct",
-        "type": "string"
+        "type": "number"
       },
       "pv_window_minutes": {
         "id": "/campaign/pv_window_minutes",
@@ -185,7 +185,7 @@
       "start_date": {
         "id": "/campaign/start_date",
         "type": "string",
-        "format": "date-time"
+        "format": "datetimezone"
       },
       "status": {
         "id": "/campaign/status",
@@ -198,7 +198,7 @@
       "updated_on": {
         "id": "/campaign/updated_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "use_default_ad_server": {

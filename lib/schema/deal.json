@@ -32,12 +32,12 @@
       "start_datetime": {
         "id": "/deal/start_datetime",
         "type": "string",
-        "format": "date-time"
+        "format": "datetimezone"
       },
       "end_datetime": {
         "id": "/deal/end_datetime",
         "type": "string",
-        "format": "date-time"
+        "format": "datetimezone"
       },
       "media_type": {
         "id": "/deal/media_type",
@@ -94,13 +94,13 @@
       "created_on": {
         "id": "/deal/created_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "updated_on": {
         "id": "/deal/updated_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       }
     },

@@ -36,7 +36,7 @@
       "end_date": {
         "id": "/strategy/end_date",
         "type": "string",
-        "format": "date-time"
+        "format": "datetimezone"
       },
       "feature_compatibility": {
         "id": "/strategy/feature_compatibility",
@@ -173,7 +173,7 @@
       "start_date": {
         "id": "/strategy/start_date",
         "type": "string",
-        "format": "date-time"
+        "format": "datetimezone"
       },
       "status": {
         "id": "/strategy/status",
@@ -224,13 +224,13 @@
       "created_on": {
         "id": "/strategy/created_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "updated_on": {
         "id": "/strategy/updated_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       }
     },

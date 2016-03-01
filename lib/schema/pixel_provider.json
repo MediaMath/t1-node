@@ -32,13 +32,13 @@
       "created_on": {
         "id": "/pixel_provider/created_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "updated_on": {
         "id": "/pixel_provider/updated_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       }
     },

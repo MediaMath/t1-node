@@ -20,6 +20,11 @@
       "version": {
         "id": "/entity/version",
         "type": "integer"
+      },
+      "meta": {
+        "id": "/entity/meta",
+        "type": "object",
+        "readonly": true
       }
     },
     "required": [

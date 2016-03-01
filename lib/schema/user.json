@@ -43,7 +43,7 @@
       "last_login_on": {
         "id": "/user/last_login_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "last_name": {
@@ -65,7 +65,7 @@
       "password_reset_sent": {
         "id": "/user/password_reset_sent",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "password_reset_token": {
@@ -100,7 +100,7 @@
       "sso_auth_sent": {
         "id": "/user/sso_auth_sent",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "sso_auth_token": {
@@ -146,13 +146,13 @@
       "created_on": {
         "id": "/user/created_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "updated_on": {
         "id": "/user/updated_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       }
     },
