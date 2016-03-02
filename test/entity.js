@@ -37,13 +37,19 @@ describe("entity", function () {
             campaign = campaign.get(10000, connectionStub);
 
             return expect(campaign).to.eventually
-                    .have.deep.property('data.id', 10000) &&
+                    .have.property('id', 10000) &&
                 expect(campaign).to.eventually
-                    .have.deep.property('data.entity_type', 'campaign')
+                    .have.property('entity_type', 'campaign')
+        });
+
+        it("should should have flattened currency fields", function () {
+            return expect(campaign).to.eventually
+                    .have.property('total_budget', 50000) &&
+                expect(campaign).to.eventually
+                    .have.property('goal_value', 50)
         });
 
     });
-
 });
 
 

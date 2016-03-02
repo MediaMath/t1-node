@@ -20,28 +20,17 @@
       "version": {
         "id": "/entity/version",
         "type": "integer"
+      },
+      "meta": {
+        "id": "/entity/meta",
+        "type": "object",
+        "readonly": true
       }
     },
     "required": [
       "entity_type",
       "name"
     ]
-  },
-  "currency_array": {
-    "type": "array",
-    "items": {
-      "type": "object",
-      "properties": {
-        "currency_code": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        }
-      }
-    },
-    "minItems": 1,
-    "uniqueItems": true
   },
   "logical_and_or": {
     "type": {

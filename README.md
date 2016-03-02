@@ -25,7 +25,7 @@ var connection = t1.T1Connection(config);
 var agencyPromise = new t1.Entity('agency')
   .get(1234, connection)
   .then(function(agency) {this.agency = agency});
-agency.data.name = 'new name';
+agency.name = 'new name';
 agency.save(conn).done(console.log('saved');
 ```
 
@@ -34,12 +34,27 @@ agency.save(conn).done(console.log('saved');
 Returns a generator to entities
 
 ``` js
-var mm = new t1.EntityList(t1conf);
 var userParams = {
   'page_limit':10
   };
-mm.get('campaigns',  userParams).then(function(list) {this.pg1 = list});
-mm.getNextPage(pg1).then(function(list) {this.pg2 = list});
+t1.EntityList.get('campaigns', connection,  userParams).then(function(list) {this.pg1 = list});
+t1.EntityList.getNextPage(pg1, conn).then(function(list) {this.pg2 = list});
+
+for (var entity of pg1.entities) {console.log(entity)}
+```
+
+
+###### Related entities
+It's possible to include related entities by including in a 'with' property in userParams.
+
+``` js
+
+var userParams = {
+  'page_limit':10
+  'with':['strategies']
+  };
+t1.EntityList.get('campaigns', connection,  userParams).then(function(list) {this.pg1 = list});
+t1.EntityList.getNextPage(pg1, connection).then(function(list) {this.pg2 = list});
 
 for (var entity of pg1.entities) {console.log(entity)}
 ```
@@ -50,7 +65,7 @@ for (var entity of pg1.entities) {console.log(entity)}
 To get a strategy's targeting segments:
 ``` js
 var targetingSegmentsPromise = new t1.StrategyTargetSegments()
-  .get(strategy_id, connection)
+  .get(strategyId, connection)
   .then(function(targetingSegments) {this.targetingSegments = targetingSegments});
 ```  
 

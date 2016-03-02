@@ -73,7 +73,7 @@ describe("strategy target segments", function () {
                 'segments.2.restriction': 'EXCLUDE'
 
             };
-            var formdata = targetingSegments._generate_form();
+            var formdata = targetingSegments._generateForm();
 
             return expect(formdata).to.eventually.deep.equal(expected);
         });

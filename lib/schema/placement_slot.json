@@ -45,7 +45,7 @@
       "end_date": {
         "id": "/placement_slot/end_date",
         "type": "string",
-        "format": "date-time"
+        "format": "datetimezone"
       },
       "est_volume": {
         "id": "/placement_slot/est_volume",
@@ -112,7 +112,7 @@
       "start_date": {
         "id": "/placement_slot/start_date",
         "type": "string",
-        "format": "date-time"
+        "format": "datetimezone"
       },
       "volume_unit": {
         "id": "/placement_slot/volume_unit",
@@ -130,13 +130,13 @@
       "created_on": {
         "id": "/placement_slot/created_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       },
       "updated_on": {
         "id": "/placement_slot/updated_on",
         "type": "string",
-        "format": "date-time",
+        "format": "datetimezone",
         "readonly": true
       }
     },
