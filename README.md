@@ -65,7 +65,7 @@ for (var entity of pg1.entities) {console.log(entity)}
 To get a strategy's targeting segments:
 ``` js
 var targetingSegmentsPromise = new t1.StrategyTargetSegments()
-  .get(strategy_id, connection)
+  .get(strategyId, connection)
   .then(function(targetingSegments) {this.targetingSegments = targetingSegments});
 ```  
 
