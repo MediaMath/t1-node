@@ -70,7 +70,8 @@
       },
       "password_reset_token": {
         "id": "/user/password_reset_token",
-        "type": "string"
+        "type": "string",
+        "readonly": true
       },
       "phone": {
         "id": "/user/phone",
@@ -105,7 +106,8 @@
       },
       "sso_auth_token": {
         "id": "/user/sso_auth_token",
-        "type": "string"
+        "type": "string",
+        "readonly": true
       },
       "title": {
         "id": "/user/title",
