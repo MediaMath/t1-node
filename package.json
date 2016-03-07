@@ -1,6 +1,7 @@
 {
   "name": "mmt1",
   "description": "Connection Module for T1 API",
+  "license": "Apache-2.0",
   "version": "0.0.1",
   "engines": {
     "node": ">= 0.12"
