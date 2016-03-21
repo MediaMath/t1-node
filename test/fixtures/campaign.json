@@ -13,6 +13,10 @@
       {
         "currency_code": "GBP",
         "value": "50000.00"
+      },
+      {
+        "currency_code": "JPY",
+        "value": "8000000.0000"
       }
     ],
     "service_type": "SELF",
@@ -36,6 +40,10 @@
       {
         "currency_code": "GBP",
         "value": "50.0000"
+      },
+      {
+        "currency_code": "JPY",
+        "value": "8000.0000"
       }
     ],
     "entity_type": "campaign",
