@@ -1,0 +1,8 @@
+language: node
+node:
+  - "4.0"
+# command to install dependencies
+install: npm install
+script:
+  - mocha test
+
