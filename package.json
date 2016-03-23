@@ -29,6 +29,7 @@
   },
   "scripts": {
     "lint": "jshint lib/**.js",
-    "test": "mocha test"
+    "test": "mocha test",
+     "posttest": "npm run lint"
   }
 }
