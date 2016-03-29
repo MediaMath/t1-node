@@ -1,4 +1,4 @@
-var Promise = require('bluebird');
+var BPromise = require('bluebird');
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
 var t1 = require('../index');
@@ -16,11 +16,11 @@ describe("entity", function () {
 
     beforeEach(function () {
         sandbox = sinon.sandbox.create();
-        getStub = sandbox.stub(connectionStub, "get").returns(Promise.try(function () {
-            return parsedResult
+        getStub = sandbox.stub(connectionStub, "get").returns(BPromise.try(function () {
+            return parsedResult;
         }));
-        postStub = sandbox.stub(connectionStub, "post").returns(Promise.try(function () {
-            return parsedResult
+        postStub = sandbox.stub(connectionStub, "post").returns(BPromise.try(function () {
+            return parsedResult;
         }));
     });
 
@@ -39,7 +39,7 @@ describe("entity", function () {
             return expect(campaign).to.eventually
                     .have.property('id', 10000) &&
                 expect(campaign).to.eventually
-                    .have.property('entity_type', 'campaign')
+                    .have.property('entity_type', 'campaign');
         });
 
     });
@@ -96,7 +96,7 @@ describe("entity", function () {
         });
 
     });
-    
+
 });
 
 
