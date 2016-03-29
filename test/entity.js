@@ -42,14 +42,61 @@ describe("entity", function () {
                     .have.property('entity_type', 'campaign')
         });
 
-        it("should should have flattened currency fields", function () {
-            return expect(campaign).to.eventually
-                    .have.property('total_budget', 50000) &&
-                expect(campaign).to.eventually
-                    .have.property('goal_value', 50)
+    });
+
+    describe("#get/set currency values", function () {
+        var campaignData = JSON.parse(common.loadFixture('campaign'));
+
+        var campaign = new t1.Entity('campaign');
+
+        campaign.processEntity(campaignData.data, campaignData.meta);
+
+        it("should return the default currency value", function () {
+            var amt = campaign.getCurrencyValue('goal_value');
+
+            return expect(amt).to.equal(campaign.goal_value[0].value)
+
+        });
+
+        it("should return the JPY currency value", function () {
+            var amt = campaign.getCurrencyValue('goal_value',  'JPY');
+            return expect(amt).to.equal(campaign.goal_value[1].value)
+        });
+
+        it("should set the default currency value", function () {
+            var newValue = 1;
+            campaign.setCurrencyValue('goal_value', newValue);
+            var changedAmt = campaign.getCurrencyValue('goal_value');
+            return expect(changedAmt).to.equal(newValue)
+
+        });
+
+        it("should set the JPY currency value", function () {
+            var newValue = 2;
+            campaign.setCurrencyValue('goal_value', newValue, 'JPY');
+            var changedAmt = campaign.getCurrencyValue('goal_value', 'JPY');
+            return expect(changedAmt).to.equal(newValue)
+
+        });
+    });
+
+    describe("#generate post data", function () {
+        var campaignData = JSON.parse(common.loadFixture('campaign'));
+
+        var campaign = new t1.Entity('campaign');
+
+        campaign.processEntity(campaignData.data, campaignData.meta);
+
+        it("should flatten currency data", function () {
+            var amt = campaign.getCurrencyValue('goal_value');
+            var form = campaign._getPostData();
+
+            return expect(form).to.eventually
+                .have.property('goal_value', amt)
         });
 
     });
+    
 });
 
 

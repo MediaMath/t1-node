@@ -54,8 +54,7 @@
         "type": "boolean"
       },
       "price": {
-        "id": "/campaign/price",
-        "type": "number"
+        "$ref": "common.json#/currency_array"
       },
       "price_method": {
         "id": "/deal/price_method",
