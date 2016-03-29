@@ -1,6 +1,4 @@
-"use strict";
-
-var Promise = require('bluebird');
+var BPromise = require('bluebird');
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
 var t1 = require('../index');
@@ -18,11 +16,11 @@ describe("strategy target segments", function () {
 
     beforeEach(function () {
         sandbox = sinon.sandbox.create();
-        getStub = sandbox.stub(connectionStub, "get").returns(Promise.try(function () {
-            return parsedResult
+        getStub = sandbox.stub(connectionStub, "get").returns(BPromise.try(function () {
+            return parsedResult;
         }));
-        postStub = sandbox.stub(connectionStub, "post").returns(Promise.try(function () {
-            return parsedResult
+        postStub = sandbox.stub(connectionStub, "post").returns(BPromise.try(function () {
+            return parsedResult;
         }));
     });
 
