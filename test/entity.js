@@ -1,4 +1,4 @@
-var Promise = require('bluebird');
+var BPromise = require('bluebird');
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
 var t1 = require('../index');
@@ -16,11 +16,11 @@ describe("entity", function () {
 
     beforeEach(function () {
         sandbox = sinon.sandbox.create();
-        getStub = sandbox.stub(connectionStub, "get").returns(Promise.try(function () {
-            return parsedResult
+        getStub = sandbox.stub(connectionStub, "get").returns(BPromise.try(function () {
+            return parsedResult;
         }));
-        postStub = sandbox.stub(connectionStub, "post").returns(Promise.try(function () {
-            return parsedResult
+        postStub = sandbox.stub(connectionStub, "post").returns(BPromise.try(function () {
+            return parsedResult;
         }));
     });
 
@@ -39,7 +39,7 @@ describe("entity", function () {
             return expect(campaign).to.eventually
                     .have.property('id', 10000) &&
                 expect(campaign).to.eventually
-                    .have.property('entity_type', 'campaign')
+                    .have.property('entity_type', 'campaign');
         });
 
     });
@@ -54,20 +54,20 @@ describe("entity", function () {
         it("should return the default currency value", function () {
             var amt = campaign.getCurrencyValue('goal_value');
 
-            return expect(amt).to.equal(campaign.goal_value[0].value)
+            return expect(amt).to.equal(campaign.goal_value[0].value);
 
         });
 
         it("should return the JPY currency value", function () {
             var amt = campaign.getCurrencyValue('goal_value',  'JPY');
-            return expect(amt).to.equal(campaign.goal_value[1].value)
+            return expect(amt).to.equal(campaign.goal_value[1].value);
         });
 
         it("should set the default currency value", function () {
             var newValue = 1;
             campaign.setCurrencyValue('goal_value', newValue);
             var changedAmt = campaign.getCurrencyValue('goal_value');
-            return expect(changedAmt).to.equal(newValue)
+            return expect(changedAmt).to.equal(newValue);
 
         });
 
@@ -75,7 +75,7 @@ describe("entity", function () {
             var newValue = 2;
             campaign.setCurrencyValue('goal_value', newValue, 'JPY');
             var changedAmt = campaign.getCurrencyValue('goal_value', 'JPY');
-            return expect(changedAmt).to.equal(newValue)
+            return expect(changedAmt).to.equal(newValue);
 
         });
     });
@@ -92,11 +92,11 @@ describe("entity", function () {
             var form = campaign._getPostData();
 
             return expect(form).to.eventually
-                .have.property('goal_value', amt)
+                .have.property('goal_value', amt);
         });
 
     });
-    
+
 });
 
 

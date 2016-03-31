@@ -1,4 +1,4 @@
-var Promise = require('bluebird');
+var BPromise = require('bluebird');
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
 var common = require('./test-common');
@@ -21,8 +21,8 @@ describe("entityList", function () {
         sandbox = sinon.sandbox.create();
 
         postStub = sandbox.stub(connectionStub, "post")
-            .returns(Promise.try(function () {
-                return parsedResult
+            .returns(BPromise.try(function () {
+                return parsedResult;
             }));
     });
 
@@ -37,8 +37,8 @@ describe("entityList", function () {
             parsedResult = common.loadFixture('campaigns-10');
 
             getStub = sandbox.stub(connectionStub, "get")
-                .returns(Promise.try(function () {
-                    return parsedResult
+                .returns(BPromise.try(function () {
+                    return parsedResult;
                 }));
             var campaigns = service.get('campaigns', connectionStub, userParams);
 
@@ -59,8 +59,8 @@ describe("entityList", function () {
             parsedResult = common.loadFixture('campaigns-100');
 
             getStub = sandbox.stub(connectionStub, "get")
-                .returns(Promise.try(function () {
-                    return parsedResult
+                .returns(BPromise.try(function () {
+                    return parsedResult;
                 }));
             var campaigns = service.get('campaigns', connectionStub, userParams);
 
