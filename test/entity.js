@@ -78,6 +78,14 @@ describe("entity", function () {
             return expect(changedAmt).to.equal(newValue);
 
         });
+
+        it("should set a default currency value of a nonexistant field", function () {
+            var newValue = 1;
+            campaign.setCurrencyValue('some_new_value', newValue);
+            var changedAmt = campaign.getCurrencyValue('some_new_value');
+            return expect(changedAmt).to.equal(newValue);
+
+        });
     });
 
     describe("#generate post data", function () {
