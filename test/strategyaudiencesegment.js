@@ -4,7 +4,7 @@ var sinon = require('sinon');
 var t1 = require('../index');
 var common = require('./test-common');
 
-describe("strategy target segments", function () {
+describe("strategy audience segments", function () {
 
     var connectionStub = {};
     connectionStub.get = function () {
@@ -28,40 +28,40 @@ describe("strategy target segments", function () {
         sandbox.restore();
     });
 
-    describe("#get strategy target segments", function () {
-        parsedResult = common.loadFixture('strategy-targeting-segments');
+    describe("#get strategy audience segments", function () {
+        parsedResult = common.loadFixture('strategy-audience-segments');
 
-        var targetingSegments = new t1.StrategyTargetSegments();
+        var audienceSegments = new t1.StrategyAudienceSegments();
 
-        it("should have strategy targeting segments", function () {
-            targetingSegments = targetingSegments.get(1171990, connectionStub);
+        it("should have strategy audience segments", function () {
+            audienceSegments = audienceSegments.get(1171990, connectionStub);
 
-            return expect(targetingSegments).to.eventually
+            return expect(audienceSegments).to.eventually
                     .have.property('strategy_id', 1171990) &&
 
-                expect(targetingSegments).to.eventually
+                expect(audienceSegments).to.eventually
                     .have.property('include')
-                    .and.deep.equal([[119, 'OR'], [118, 'OR']]) &&
-                expect(targetingSegments).to.eventually
+                    .and.deep.equal([1358322, 1460324]) &&
+                expect(audienceSegments).to.eventually
                     .have.property('exclude')
-                    .and.deep.equal([[1, 'OR']]) &&
-            expect(targetingSegments).to.eventually
+                    .and.deep.equal([1405158]) &&
+            expect(audienceSegments).to.eventually
                 .have.property('exclude_op')
                 .and.equal('OR') &&
-            expect(targetingSegments).to.eventually
+            expect(audienceSegments).to.eventually
                 .have.property('include_op')
-                .and.equal('OR');
+                .and.equal('AND');
         });
     });
 
-    describe("#update targeting", function () {
-        parsedResult = common.loadFixture('strategy-targeting-segments');
+    describe("#update audience", function () {
+        parsedResult = common.loadFixture('strategy-audience-segments');
 
-        var targetingSegments = new t1.StrategyTargetSegments();
-        targetingSegments.include = [[1, 'OR']];
-        targetingSegments.exclude = [[119, 'OR']];
-        targetingSegments.include_op = 'OR';
-        targetingSegments.exclude_op = 'OR';
+        var audienceSegments = new t1.StrategyAudienceSegments();
+        audienceSegments.include = [1];
+        audienceSegments.exclude = [119];
+        audienceSegments.include_op = 'OR';
+        audienceSegments.exclude_op = 'OR';
 
 
         it("should generate the correct formdata for posting", function () {
@@ -70,14 +70,11 @@ describe("strategy target segments", function () {
                 'include_op': 'OR',
                 'exclude_op': 'OR',
                 'segments.1.id': 1,
-                'segments.1.operator': 'OR',
                 'segments.1.restriction': 'INCLUDE',
                 'segments.2.id': 119,
-                'segments.2.operator': 'OR',
                 'segments.2.restriction': 'EXCLUDE'
-
             };
-            var formdata = targetingSegments._generateForm();
+            var formdata = audienceSegments._generateForm();
 
             return expect(formdata).to.eventually.deep.equal(expected);
         });

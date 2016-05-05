@@ -1,0 +1,118 @@
+{
+  "data": {
+    "run_on_streaming": false,
+    "use_mm_freq": false,
+    "run_on_display": true,
+    "zone_name": "Europe/Paris",
+    "updated_on": "2016-05-04T15:44:54+0000",
+    "frequency_interval": "month",
+    "campaign_id": 1234566,
+    "targeting_segment_exclude_op": "OR",
+    "created_on": "2016-05-04T15:44:54+0000",
+    "targeting_segment_include_op": "OR",
+    "run_on_all_pmp": false,
+    "id": 1234567,
+    "currency_code": "USD",
+    "use_campaign_start": false,
+    "name": "strategy with audience segments",
+    "frequency_amount": 3,
+    "end_date": "2016-05-06T13:44:49+0000",
+    "type": "REM",
+    "bid_price_is_media_only": false,
+    "supply_type": "RTB",
+    "pacing_type": "even",
+    "goal_type": "reach",
+    "frequency_type": "even",
+    "status": false,
+    "budget": [
+      {
+        "currency_code": "USD",
+        "value": 1.43
+      }
+    ],
+    "effective_goal_value": [
+      {
+        "currency_code": "USD",
+        "value": "93.0000"
+      }
+    ],
+    "goal_value": [
+      {
+        "currency_code": "USD",
+        "value": 93
+      }
+    ],
+    "strategy_audience_segments": [
+      {
+        "strategy_id": 1234567,
+        "rel": "strategy_audience_segments",
+        "version": 0,
+        "name": "Strategy Audience Segments #1132602",
+        "updated_on": "2016-05-04T15:44:55+0000",
+        "audience_segment_id": 1405158,
+        "group_identifier": "g2",
+        "created_on": "2016-05-04T15:44:55+0000",
+        "entity_type": "strategy_audience_segment",
+        "id": 1132602,
+        "restriction": "EXCLUDE"
+      },
+      {
+        "strategy_id": 1234567,
+        "rel": "strategy_audience_segments",
+        "version": 0,
+        "name": "Strategy Audience Segments #1132601",
+        "updated_on": "2016-05-04T15:44:55+0000",
+        "audience_segment_id": 1358322,
+        "group_identifier": "g1",
+        "created_on": "2016-05-04T15:44:55+0000",
+        "entity_type": "strategy_audience_segment",
+        "id": 1132601,
+        "restriction": "INCLUDE"
+      },
+      {
+        "strategy_id": 1234567,
+        "rel": "strategy_audience_segments",
+        "version": 0,
+        "name": "Strategy Audience Segments #1132600",
+        "updated_on": "2016-05-04T15:44:55+0000",
+        "audience_segment_id": 1460324,
+        "group_identifier": "g1",
+        "created_on": "2016-05-04T15:44:55+0000",
+        "entity_type": "strategy_audience_segment",
+        "id": 1132600,
+        "restriction": "INCLUDE"
+      }
+    ],
+    "pacing_amount": [
+      {
+        "currency_code": "USD",
+        "value": 1.93
+      }
+    ],
+    "site_restriction_transparent_urls": true,
+    "media_type": "VIDEO",
+    "entity_type": "strategy",
+    "start_date": "2016-05-05T13:44:49+0000",
+    "run_on_mobile": true,
+    "use_optimization": true,
+    "max_bid": [
+      {
+        "currency_code": "USD",
+        "value": 1.12
+      }
+    ],
+    "audience_segment_include_op": "AND",
+    "bid_aggressiveness": 13,
+    "version": 2,
+    "run_on_all_exchanges": true,
+    "audience_segment_exclude_op": "OR",
+    "site_selectiveness": "REDUCED",
+    "use_campaign_end": false,
+    "pacing_interval": "hour"
+  },
+  "meta": {
+    "etag": "26e389c8d37cf947bc4703b08d79342928e0b26d",
+    "called_on": "2016-05-05T09:52:43+0000",
+    "status": "ok"
+  }
+}
