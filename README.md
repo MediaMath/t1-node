@@ -1,7 +1,7 @@
 t1-node
 =======
 
-Node implementation of a T1 API Library
+Node implementation of a T1 API Library. Uses [Bluebird](http://bluebirdjs.com/docs/getting-started.html) for fast, simple callback handling via promises.
 
 ### Compilation/Installation
 Checkout, then `npm install .`
@@ -91,4 +91,21 @@ To edit strategy targeting segments:
 targetValues.include = [[1, 'OR']];
 targetValues.addTargetValues('REGN', 'INCLUDE', 'OR', [23, 251]);
 targetValues.save(connection).done(console.log('saved');
+```
+=======
+##### Strategy Audience Segments
+To get a strategy's audience segments:
+``` js
+var audienceSegmentsPromise = new t1.StrategyAudienceegments()
+  .get(strategyId, connection)
+  .then(function(audienceSegments) {this.targetingSegments = targetingSegments});
+```  
+
+To edit strategy audience segments:
+``` js
+audienceSegments.include = [1405158];
+audienceSegments.exclude = [1405158];
+targetingSegments.include_op = 'OR';
+targetingSegments.exclude_op = 'OR';
+targetingSegments.save(connection).done(console.log('saved');
 ```
