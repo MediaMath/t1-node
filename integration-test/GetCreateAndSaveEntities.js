@@ -13,13 +13,14 @@ describe("Get, create and save Entities", function () {
     var conn = new t1.T1Connection(t1conf);
     var testTimestamp = new Date().toISOString();
     var expectedName = "t1-node test " + testTimestamp;
+    var campaignId;
 
     describe("#create and update single campaign", function () {
         var campaign = new t1.Entity('campaign');
 
         it("should save a new campaign", function () {
             campaign.ad_server_id = 9;
-            campaign.name = expectedName;
+            campaign.name = expectedName + ' campaign';
             campaign.advertiser_id = 154359;
             campaign.status = false;
             var start = new Date(),
@@ -43,6 +44,7 @@ describe("Get, create and save Entities", function () {
         });
 
         it("should update name", function() {
+            campaignId = campaign.id;
             var expectedName = campaign.name + '_UPDATED';
             var version = campaign.version;
             campaign.name = expectedName;
@@ -53,6 +55,31 @@ describe("Get, create and save Entities", function () {
                 expect(campaignPromise).to.eventually
                     .have.property('version', version + 1 );
         });
+    });
 
+    describe("#create a strategy", function () {
+        var strategy = new t1.Entity('strategy');
+
+        it("should save a new strategy", function () {
+            strategy.name = expectedName + ' strategy';
+            strategy.budget = 100;
+            strategy.campaign_id = campaignId;
+            strategy.status = false;
+          
+            strategy.use_campaign_start = true;
+            strategy.use_campaign_end = true;
+            strategy.goal_type = 'spend';
+            strategy.setCurrencyValue('goal_value', 100);
+            strategy.setCurrencyValue('max_bid', 2);
+            strategy.setCurrencyValue('pacing_amount', 2);
+            strategy.type = 'GBO';
+
+            var strategyPromise = strategy.save(conn);
+
+            return expect(strategyPromise).to.eventually
+                    .have.property('id') &&
+                expect(strategyPromise).to.eventually
+                    .have.property('version', 0);
+        });
     });
 });
