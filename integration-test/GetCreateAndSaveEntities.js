@@ -13,7 +13,7 @@ describe("Get, create and save Entities", function () {
     var conn = new t1.T1Connection(t1conf);
     var testTimestamp = new Date().toISOString();
     var expectedName = "t1-node test " + testTimestamp;
-    var campaignId;
+    var campaignId, strategyId;
 
     describe("#create and update single campaign", function () {
         var campaign = new t1.Entity('campaign');
@@ -80,6 +80,84 @@ describe("Get, create and save Entities", function () {
                     .have.property('id') &&
                 expect(strategyPromise).to.eventually
                     .have.property('version', 0);
+        });
+
+        it("set the strategy ID", function () {
+            strategyId = strategy.id;
+        });
+    });
+
+    describe("#set up target segments", function () {
+        this.timeout(10000);
+        var targetSegments = new t1.StrategyTargetSegments();
+
+        it("should get the target segments", function () {
+            var targetSegmentsPromise = targetSegments.get(strategyId, conn);
+            return expect(targetSegmentsPromise).to.eventually
+                    .have.property('include_op', 'OR') &&
+                expect(targetSegmentsPromise).to.eventually
+                    .have.property('exclude_op', 'OR') &&
+                expect(targetSegmentsPromise).to.eventually
+                    .have.property('include')
+                    .and.deep.equal([]) &&
+                expect(targetSegmentsPromise).to.eventually
+                    .have.property('exclude')
+                    .and.deep.equal([]);
+        });
+
+        it("should get a CPM", function () {
+            targetSegments.include = [[865, 'OR'], [871, 'OR']];
+            targetSegments.exclude = [[362, 'OR']];
+            
+            var cpmPromise = targetSegments.getCpmEstimate(conn);
+            
+            return expect(cpmPromise).to.eventually
+                .have.property('price_estimate')
+                .and.have.property('amount');
+        });
+
+
+        it("should successfully save", function () {
+            var savePromise = targetSegments.getCpmEstimate(conn);
+
+            return expect(savePromise).to.be.fulfilled;
+        });
+    });
+
+    describe("#set up audience segments", function () {
+        this.timeout(10000);
+        var audienceSegments = new t1.StrategyAudienceSegments();
+
+        it("should get the target segments", function () {
+            var audienceSegmentsPromise = audienceSegments.get(strategyId, conn);
+            return expect(audienceSegmentsPromise).to.eventually
+                    .have.property('include_op', 'OR') &&
+                expect(audienceSegmentsPromise).to.eventually
+                    .have.property('exclude_op', 'OR') &&
+                expect(audienceSegmentsPromise).to.eventually
+                    .have.property('include')
+                    .and.deep.equal([]) &&
+                expect(audienceSegmentsPromise).to.eventually
+                    .have.property('exclude')
+                    .and.deep.equal([]);
+        });
+
+        it("should get a CPM", function () {
+            audienceSegments.include = [131454, 131453];
+            audienceSegments.exclude = [131452];
+
+            var cpmPromise = audienceSegments.getCpmEstimate(conn);
+
+            return expect(cpmPromise).to.eventually
+                .have.property('price_estimate')
+                .and.have.property('amount');
+        });
+
+
+        it("should successfully save", function () {
+            var savePromise = audienceSegments.getCpmEstimate(conn);
+
+            return expect(savePromise).to.be.fulfilled;
         });
     });
 });
