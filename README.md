@@ -77,3 +77,18 @@ targetingSegments.include_op = 'OR';
 targetingSegments.exclude_op = 'OR';
 targetingSegments.save(connection).done(console.log('saved');
 ```
+
+##### Strategy Target Dimensions/Values
+To get a strategy's targeting values:
+``` js
+var targetValuesPromise = new t1.StrategyTargetValues()
+  .get(strategyId, connection)
+  .then(function(targetValues) {this.targetValues = targetValues});
+```  
+
+To edit strategy targeting segments:
+``` js
+targetValues.include = [[1, 'OR']];
+targetValues.addTargetValues('REGN', 'INCLUDE', 'OR', [23, 251]);
+targetValues.save(connection).done(console.log('saved');
+```

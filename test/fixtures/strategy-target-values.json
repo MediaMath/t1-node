@@ -1,0 +1,109 @@
+{
+  "data": [
+    {
+      "strategy_id": 123456,
+      "target_dimension": {
+        "rel": "target_dimension",
+        "entity_type": "target_dimension",
+        "name": "Geography",
+        "id": 7,
+        "code": "REGN"
+      },
+      "active": true,
+      "name": "Strategy Targets #2938890",
+      "target_op": "OR",
+      "target_dimension_id": 7,
+      "target_values": [
+        {
+          "rel": "target_values",
+          "value": 60231,
+          "name": "United States",
+          "target_dimension_id": 7,
+          "is_targetable": true,
+          "entity_type": "target_value",
+          "id": 251,
+          "code": "us"
+        },
+        {
+          "rel": "target_values",
+          "value": 60003,
+          "name": "Afghanistan",
+          "target_dimension_id": 7,
+          "is_targetable": true,
+          "entity_type": "target_value",
+          "id": 23,
+          "code": "af"
+        }
+      ],
+      "entity_type": "strategy_target",
+      "id": 2938890,
+      "exclude": false
+    },
+    {
+      "strategy_id": 123456,
+      "target_dimension": {
+        "rel": "target_dimension",
+        "entity_type": "target_dimension",
+        "name": "Geography",
+        "id": 7,
+        "code": "REGN"
+      },
+      "active": true,
+      "name": "Strategy Targets #2944346",
+      "target_op": "OR",
+      "target_dimension_id": 7,
+      "target_values": [
+        {
+          "rel": "target_values",
+          "value": 60011,
+          "name": "Argentina",
+          "target_dimension_id": 7,
+          "is_targetable": true,
+          "entity_type": "target_value",
+          "id": 31,
+          "code": "ar"
+        }
+      ],
+      "entity_type": "strategy_target",
+      "id": 2944346,
+      "exclude": true
+    },
+    {
+      "strategy_id": 123456,
+      "target_dimension": {
+        "rel": "target_dimension",
+        "entity_type": "target_dimension",
+        "name": "DMA",
+        "id": 1,
+        "code": "DMAX"
+      },
+      "active": true,
+      "name": "Strategy Targets #2944366",
+      "target_op": "OR",
+      "target_dimension_id": 1,
+      "target_values": [
+        {
+          "rel": "target_values",
+          "value": 80309,
+          "name": "France | Alsace | Haut-Rhin",
+          "target_dimension_id": 1,
+          "is_targetable": true,
+          "entity_type": "target_value",
+          "id": 99846,
+          "code": "250068"
+        }
+      ],
+      "entity_type": "strategy_target",
+      "id": 2944366,
+      "exclude": false
+    }
+  ],
+  "meta": {
+    "etag": "3b7fa70f76b0ae1d16bd420c74091c3604b3ca61",
+    "count": 3,
+    "called_on": "2016-06-02T12:45:25+0000",
+    "status": "ok",
+    "offset": 0,
+    "total_count": 0
+  }
+}
