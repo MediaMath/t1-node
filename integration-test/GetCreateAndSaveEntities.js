@@ -34,16 +34,16 @@ describe("Get, create and save Entities", function () {
             campaign.service_type = 'SELF';
             campaign.setCurrencyValue('total_budget', 100);
             campaign.use_mm_freq = false;
-            
+
             var campaignPromise = campaign.save(conn);
-            
+
             return expect(campaignPromise).to.eventually
                     .have.property('id') &&
                 expect(campaignPromise).to.eventually
                     .have.property('version', 0);
         });
 
-        it("should update name", function() {
+        it("should update name", function () {
             campaignId = campaign.id;
             var expectedName = campaign.name + '_UPDATED';
             var version = campaign.version;
@@ -53,7 +53,7 @@ describe("Get, create and save Entities", function () {
             return expect(campaignPromise).to.eventually
                     .have.property('name', expectedName) &&
                 expect(campaignPromise).to.eventually
-                    .have.property('version', version + 1 );
+                    .have.property('version', version + 1);
         });
     });
 
@@ -65,7 +65,7 @@ describe("Get, create and save Entities", function () {
             strategy.budget = 100;
             strategy.campaign_id = campaignId;
             strategy.status = false;
-          
+
             strategy.use_campaign_start = true;
             strategy.use_campaign_end = true;
             strategy.goal_type = 'spend';
@@ -108,9 +108,9 @@ describe("Get, create and save Entities", function () {
         it("should get a CPM", function () {
             targetSegments.include = [[865, 'OR'], [871, 'OR']];
             targetSegments.exclude = [[362, 'OR']];
-            
+
             var cpmPromise = targetSegments.getCpmEstimate(conn);
-            
+
             return expect(cpmPromise).to.eventually
                 .have.property('price_estimate')
                 .and.have.property('amount');
@@ -118,7 +118,7 @@ describe("Get, create and save Entities", function () {
 
 
         it("should successfully save", function () {
-            var savePromise = targetSegments.getCpmEstimate(conn);
+            var savePromise = targetSegments.save(conn);
 
             return expect(savePromise).to.be.fulfilled;
         });
@@ -155,9 +155,33 @@ describe("Get, create and save Entities", function () {
 
 
         it("should successfully save", function () {
-            var savePromise = audienceSegments.getCpmEstimate(conn);
+            var savePromise = audienceSegments.save(conn);
 
             return expect(savePromise).to.be.fulfilled;
+        });
+    });
+
+    describe("#set up target dimensions", function () {
+        this.timeout(10000);
+        var targetValues = new t1.StrategyTargetValues();
+
+        it("should get the target values", function () {
+            var targetValuesPromise = targetValues.get(strategyId, conn);
+            return expect(targetValuesPromise).to.eventually
+                .have.property('dimensions')
+                .and.deep.equal([]);
+        });
+
+        it("should successfully save", function () {
+            targetValues.addTargetValues('REGN', 'INCLUDE', 'OR', [23, 251]);
+            it("should successfully save", function () {
+
+                var savePromise = targetValues.save(conn);
+                return expect(savePromise).to.eventually
+                    .have.property('price_estimate')
+                    .and.have.property('amount');
+            });
+
         });
     });
 });
