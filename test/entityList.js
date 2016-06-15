@@ -41,14 +41,13 @@ describe("entityList", function () {
                     return parsedResult;
                 }));
             var campaigns = service.get('campaigns', connectionStub, userParams);
-
+            
             return expect(campaigns).to.eventually
                     .have.property('entities') &&
 
-                expect(campaigns).to.eventually
+               expect(campaigns).to.eventually
                     .have.property('meta')
                     .and.have.property('count', userParams.page_limit);
-
         });
     });
 
@@ -67,7 +66,8 @@ describe("entityList", function () {
             return expect(campaigns).to.eventually
                     .have.property('entities') &&
                 expect(campaigns).to.eventually
-                    .have.property('meta').and.have.property('next_page');
+                    .have.property('meta')
+                    .and.have.property('next_page');
         });
 
     });
