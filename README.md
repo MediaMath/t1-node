@@ -8,7 +8,7 @@ Checkout, then `npm install .`
 
 ### Usage
 ``` js
-var t1 = require('mmt1');
+var t1 = require('terminalone');
 var config = {
   'user': t1_username,
   'password': t1_user_password,
