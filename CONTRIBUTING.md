@@ -52,7 +52,7 @@ $ git fetch upstream
 $ git rebase -i upstream/develop
 $ git push -f origin mygithub-1234-1
 ```
-* When you solution is approved, please [squash](https://help.github.com/articles/about-git-rebase/) your commits.
+* Once your solution is approved, it will be merged by one of the t1-node repo owners
 
 Thanks for your contribution!
 
