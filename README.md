@@ -4,6 +4,9 @@ t1-node
 Node implementation of a T1 API Library. Uses [Bluebird](http://bluebirdjs.com/docs/getting-started.html) for fast, simple callback handling via promises.
 
 ### Compilation/Installation
+#### From npm
+` npm install terminalone `
+#### From source
 Checkout, then `npm install .`
 
 ### Usage
