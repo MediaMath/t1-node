@@ -26,7 +26,7 @@ var agencyPromise = new t1.Entity('agency')
   .get(1234, connection)
   .then(function(agency) {this.agency = agency});
 agency.name = 'new name';
-agency.save(conn).done(console.log('saved');
+agency.save(conn).done(console.log('saved'));
 ```
 
 ##### Entity Lists
@@ -75,7 +75,7 @@ targetingSegments.include = [[1, 'OR']];
 targetingSegments.exclude = [[119, 'OR']];
 targetingSegments.include_op = 'OR';
 targetingSegments.exclude_op = 'OR';
-targetingSegments.save(connection).done(console.log('saved');
+targetingSegments.save(connection).done(console.log('saved'));
 ```
 
 ##### Strategy Target Dimensions/Values
@@ -90,7 +90,7 @@ To edit strategy targeting segments:
 ``` js
 targetValues.include = [[1, 'OR']];
 targetValues.addTargetValues('REGN', 'INCLUDE', 'OR', [23, 251]);
-targetValues.save(connection).done(console.log('saved');
+targetValues.save(connection).done(console.log('saved'));
 ```
 =======
 ##### Strategy Audience Segments
@@ -107,5 +107,5 @@ audienceSegments.include = [1405158];
 audienceSegments.exclude = [1405158];
 targetingSegments.include_op = 'OR';
 targetingSegments.exclude_op = 'OR';
-targetingSegments.save(connection).done(console.log('saved');
+targetingSegments.save(connection).done(console.log('saved'));
 ```
