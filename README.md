@@ -51,7 +51,6 @@ for (var entity of pg1.entities) {console.log(entity)}
 It's possible to include related entities by including in a 'with' property in userParams.
 
 ``` js
-
 var userParams = {
   'page_limit':10
   'with':['strategies']
