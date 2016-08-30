@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "bluebird": "^3.3.4",
-    "fs": "0.0.2",
     "json-refs": "^1.1.1",
     "jsonschema": "^1.1.0",
     "querystring": "^0.2.0",
