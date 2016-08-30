@@ -7,13 +7,33 @@ describe("Get, create and save Entities", function () {
         user: process.env.T1SANDBOX_API_USERNAME,
         password: process.env.T1SANDBOX_API_PASSWORD,
         api_key: process.env.T1SANDBOX_API_KEY,
-        apiUrl: 'https://t1sandbox.mediamath.com/api/v2.0/'
+        secret: process.env.T1SANDBOX_SECRET,
+        apiUrl: 'https://t1sandbox.mediamath.com/api/v2.0/',
+        oauthUrl: 'https://api.mediamath.com/oauth2/v1.0'
     };
 
     var conn = new t1.T1Connection(t1conf);
     var testTimestamp = new Date().toISOString();
     var expectedName = "t1-node test " + testTimestamp;
     var campaignId, strategyId;
+
+    describe("Test Oauth login", function (){
+
+        conn.initializeOauth();
+
+        it("should return a token", function () {
+            var token = conn.fetchToken(process.env.OAUTH_CODE,"https://blog.mediamath.com/");
+            console.log(token);
+            return true;
+        });
+
+        it("should return a authorization url", function () {
+            var authUrl = conn.fetchAuthUrl("https://blog.mediamath.com/");
+            console.log(authUrl);
+            return expect(authUrl).to.contain(t1conf.oauthUrl+'/authorize');
+        });
+
+    });
 
     describe("#create and update single campaign", function () {
         var campaign = new t1.Entity('campaign');
