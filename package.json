@@ -19,18 +19,19 @@
     "mocha": "~2.1.0",
     "sinon": "~1.12.0",
     "sinon-chai": "~2.6.0",
-    "simple-oauth2": "~0.8.0"
+    "simple-oauth2": "^1.0.0"
   },
   "dependencies": {
     "bluebird": "^3.3.4",
     "json-refs": "^1.1.1",
     "jsonschema": "^1.1.0",
     "querystring": "^0.2.0",
-    "request-promise": "^1.0.2"
+    "request": "^2.74.0",
+    "request-promise": "^1.0.2",
   },
   "scripts": {
     "lint": "jshint lib/**.js",
     "test": "mocha test",
-     "posttest": "npm run lint"
+    "posttest": "npm run lint"
   }
 }
