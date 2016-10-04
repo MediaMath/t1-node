@@ -8,8 +8,7 @@ describe("Get, create and save Entities", function () {
         password: process.env.T1SANDBOX_API_PASSWORD,
         api_key: process.env.T1SANDBOX_API_KEY,
         secret: process.env.T1SANDBOX_SECRET,
-        apiUrl: 'https://t1sandbox.mediamath.com/api/v2.0/',
-        oauthUrl: 'https://api.mediamath.com/'
+        apiBaseUrl: 'https://t1sandbox.mediamath.com'
     };
 
     var conn = new t1.T1Connection(t1conf);
@@ -29,7 +28,7 @@ describe("Get, create and save Entities", function () {
 
         it("should return a authorization url", function () {
             var authUrl = conn.fetchAuthUrl("https://blog.mediamath.com/");
-            return expect(authUrl).to.contain(t1conf.oauthUrl+'oauth2/v1.0/authorize');
+            return expect(authUrl).to.contain('https://api.mediamath.com/oauth2/v1.0/authorize');
         });
 
     });
