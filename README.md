@@ -35,7 +35,10 @@ var config = {
 
 var connection = new t1.T1Connection(config);
 
-var authorizationUrl = connection.fetchAuthUrl();
+// tokenUpdatedCallback is an optional callback to a function, taking
+// a single argument which describes an access token. 
+// This can be used update your token databse on automatic token refresh. 
+var authorizationUrl = connection.fetchAuthUrl(tokenUpdatedCallback);
 
 // Redirect example using Express (see http://expressjs.com/api.html#res.redirect)
 res.redirect(authorizationUri);
