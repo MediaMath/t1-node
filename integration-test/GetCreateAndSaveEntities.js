@@ -7,7 +7,7 @@ describe("Get, create and save Entities", function () {
         user: process.env.T1SANDBOX_API_USERNAME,
         password: process.env.T1SANDBOX_API_PASSWORD,
         api_key: process.env.T1SANDBOX_API_KEY,
-        secret: process.env.T1SANDBOX_SECRET,
+        client_secret: process.env.T1SANDBOX_SECRET,
         apiBaseUrl: 'https://t1sandbox.mediamath.com',
         redirect_uri: 'https://blog.mediamath.com/'
     };
@@ -195,9 +195,9 @@ describe("Get, create and save Entities", function () {
             return expect(authUrl).to.contain('https://api.mediamath.com/oauth2/v1.0/authorize');
         });
 
-        //
+        // TODO: can we obtain a valid code without doing the user auth?
         // it("should return a token", function () {
-        //     var tokenPromise = conn.fetchToken(process.env.OAUTH_CODE,"https://blog.mediamath.com/");
+        //     var tokenPromise = conn.getToken(process.env.OAUTH_CODE,"https://blog.mediamath.com/");
         //     return expect(tokenPromise).to.eventually
         //         .have.property('token')
         // });

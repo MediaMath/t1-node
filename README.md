@@ -29,7 +29,7 @@ var t1 = require('terminalone');
 //the callback URL should match the one you specified in the developer portal for your application
 var config = {
   'api_key': application_mashery_key, 
-  'secret': application_mashery_secret,
+  'client_secret': application_mashery_secret,
   'redirect_uri': application_callback_url
 }
 
@@ -41,7 +41,7 @@ var authorizationUrl = connection.fetchAuthUrl();
 res.redirect(authorizationUri);
 
 var code = // Get the access token object (the authorization code is given from the previous step).
-connection.fetchToken(code)
+connection.getToken(code)
 		    .then(console.log('oauth complete'));
 ```
 
