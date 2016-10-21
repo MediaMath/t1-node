@@ -8,30 +8,14 @@ describe("Get, create and save Entities", function () {
         password: process.env.T1SANDBOX_API_PASSWORD,
         api_key: process.env.T1SANDBOX_API_KEY,
         secret: process.env.T1SANDBOX_SECRET,
-        apiBaseUrl: 'https://t1sandbox.mediamath.com'
+        apiBaseUrl: 'https://t1sandbox.mediamath.com',
+        redirect_uri: 'https://blog.mediamath.com/'
     };
 
     var conn = new t1.T1Connection(t1conf);
     var testTimestamp = new Date().toISOString();
     var expectedName = "t1-node test " + testTimestamp;
     var campaignId, strategyId;
-
-    describe("Test Oauth login", function (){
-
-        conn.initializeOauth();
-
-        it("should return a token", function () {
-            var tokenPromise = conn.fetchToken(process.env.OAUTH_CODE,"https://blog.mediamath.com/");
-            return expect(tokenPromise).to.eventually
-                .have.property('token')
-        });
-
-        it("should return a authorization url", function () {
-            var authUrl = conn.fetchAuthUrl("https://blog.mediamath.com/");
-            return expect(authUrl).to.contain('https://api.mediamath.com/oauth2/v1.0/authorize');
-        });
-
-    });
 
     describe("#create and update single campaign", function () {
         var campaign = new t1.Entity('campaign');
@@ -201,5 +185,22 @@ describe("Get, create and save Entities", function () {
             });
 
         });
+    });
+
+    describe("Test Oauth login", function (){
+
+        it("should return a authorization url", function () {
+            conn.initializeOauth();
+            var authUrl = conn.fetchAuthUrl();
+            return expect(authUrl).to.contain('https://api.mediamath.com/oauth2/v1.0/authorize');
+        });
+
+        //
+        // it("should return a token", function () {
+        //     var tokenPromise = conn.fetchToken(process.env.OAUTH_CODE,"https://blog.mediamath.com/");
+        //     return expect(tokenPromise).to.eventually
+        //         .have.property('token')
+        // });
+
     });
 });

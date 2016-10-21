@@ -10,6 +10,8 @@ Node implementation of a T1 API Library. Uses [Bluebird](http://bluebirdjs.com/d
 Checkout, then `npm install .`
 
 ### Usage
+
+For cookie authentication:
 ``` js
 var t1 = require('terminalone');
 var config = {
@@ -17,19 +19,43 @@ var config = {
   'password': t1_user_password,
   'api_key': application_mashery_key
   };
+var connection = new t1.T1Connection(config);
 ```
+
+For oauth2 authentication, your web application will need to redirect to the T1 user authentication page during the process. The approach is outlined below:
+
+``` js
+var t1 = require('terminalone');
+//the callback URL should match the one you specified in the developer portal for your application
+var config = {
+  'api_key': application_mashery_key, 
+  'secret': application_mashery_secret,
+  'redirect_uri': application_callback_url
+}
+
+var connection = new t1.T1Connection(config);
+
+var authorizationUrl = connection.fetchAuthUrl();
+
+// Redirect example using Express (see http://expressjs.com/api.html#res.redirect)
+res.redirect(authorizationUri);
+
+var code = // Get the access token object (the authorization code is given from the previous step).
+connection.fetchToken(code)
+		    .then(console.log('oauth complete'));
+```
+
 
 #### Single Entities
 
 Retrieve, edit and save a single entity
 
 ``` js
-var connection = new t1.T1Connection(config);
 var agencyPromise = new t1.Entity('agency')
   .get(1234, connection)
   .then(function(agency) {this.agency = agency});
 agency.name = 'new name';
-agency.save(conn).done(console.log('saved'));
+agency.save(connection).done(console.log('saved'));
 ```
 
 ##### Entity Lists
@@ -41,7 +67,7 @@ var userParams = {
   'page_limit':10
   };
 t1.EntityList.get('campaigns', connection,  userParams).then(function(list) {this.pg1 = list});
-t1.EntityList.getNextPage(pg1, conn).then(function(list) {this.pg2 = list});
+t1.EntityList.getNextPage(pg1, connection).then(function(list) {this.pg2 = list});
 
 for (var entity of pg1.entities) {console.log(entity)}
 ```
