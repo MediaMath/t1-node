@@ -18,7 +18,8 @@
     "jshint": "^2.9.1",
     "mocha": "~2.1.0",
     "sinon": "~1.12.0",
-    "sinon-chai": "~2.6.0"
+    "sinon-chai": "~2.6.0",
+    "simple-oauth2": "^1.0.0"
   },
   "dependencies": {
     "bluebird": "^3.3.4",
@@ -30,6 +31,6 @@
   "scripts": {
     "lint": "jshint lib/**.js",
     "test": "mocha test",
-     "posttest": "npm run lint"
+    "posttest": "npm run lint"
   }
 }

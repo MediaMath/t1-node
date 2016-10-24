@@ -11,6 +11,9 @@ describe("entity", function () {
     };
     connectionStub.post = function () {
     };
+    connectionStub.buildQueryString = function () {
+        return "";
+    };
     var sandbox, getStub, postStub;
     var parsedResult = "aisdaiusd";
 

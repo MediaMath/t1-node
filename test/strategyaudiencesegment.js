@@ -11,6 +11,9 @@ describe("strategy audience segments", function () {
     };
     connectionStub.post = function () {
     };
+    connectionStub.buildQueryString = function () {
+        return "";
+    };
     var sandbox, getStub, postStub;
     var parsedResult = "aisdaiusd";
 
