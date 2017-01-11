@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "bluebird": "^3.3.4",
+    "istanbul": "^0.4.5",
     "json-refs": "^1.1.1",
     "jsonschema": "^1.1.0",
     "querystring": "^0.2.0",
