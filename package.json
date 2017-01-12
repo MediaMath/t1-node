@@ -1,8 +1,8 @@
 {
   "name": "terminalone",
-  "description": "Connection Module for T1 API",
+  "description": "Connection Module for T1 API written in node.js",
   "license": "Apache-2.0",
-  "version": "0.0.2",
+  "version": "0.5.1",
   "engines": {
     "node": ">= 0.12"
   },
