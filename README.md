@@ -9,7 +9,7 @@ Node implementation of a T1 API Library. Uses [Bluebird](http://bluebirdjs.com/d
 #### From source
 Checkout, then `npm install .`
 
-### Usage
+# Usage
 
 For cookie authentication:
 ``` js
@@ -123,7 +123,7 @@ targetValues.include = [[1, 'OR']];
 targetValues.addTargetValues('REGN', 'INCLUDE', 'OR', [23, 251]);
 targetValues.save(connection).done(console.log('saved'));
 ```
-=======
+
 ##### Strategy Audience Segments
 To get a strategy's audience segments:
 ``` js
@@ -140,3 +140,11 @@ targetingSegments.include_op = 'OR';
 targetingSegments.exclude_op = 'OR';
 targetingSegments.save(connection).done(console.log('saved'));
 ```
+
+## Tests
+
+`npm test` will run local tests.
+
+To run integration tests, copy `.env.template` to `.env` and fill in the required values.
+
+`npm run integration` will run integration tests with Mocha.
