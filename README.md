@@ -141,6 +141,53 @@ targetingSegments.exclude_op = 'OR';
 targetingSegments.save(connection).done(console.log('saved'));
 ```
 
+#### Basic Reporting
+
+To get a list of all reports provided by the MediaMath Reports API:
+
+``` js
+var metaReport = new t1.Report('meta');
+metaReport.getMeta(conn).then(
+    function(report) {
+        console.log(report)
+    },
+    function(error) {
+        console.log(error.message)
+    });
+```
+
+To get a report with parameters:
+
+``` js
+var performanceReport = new t1.Report('performance');
+performanceReport.get(conn, {
+    time_window: 'yesterday',
+    time_rollup: 'by_day',
+    dimensions: 'advertiser_id',
+    filter: 'organization_id=???'
+}).then(
+    function(report) {
+        console.log(report)
+    },
+    function(error) {
+        console.log(error.message)
+    });
+```
+
+To get a report's metadata, which specifies fields and parameters:
+
+``` js
+performanceReport.getMeta(conn).then(
+    function(report) {
+        console.log(report)
+    },
+    function(error) {
+        console.log(error.message)
+    });
+```
+
+
+
 ## Tests
 
 `npm test` will run local tests.
