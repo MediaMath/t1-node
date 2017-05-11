@@ -186,8 +186,6 @@ performanceReport.getMeta(conn).then(
     });
 ```
 
-
-
 ## Tests
 
 `npm test` will run local tests.
