@@ -1,5 +1,5 @@
 {
-  "name": "terminalone",
+  "name": "@mediamath/terminalone",
   "description": "Connection Module for T1 API written in node.js",
   "license": "Apache-2.0",
   "version": "0.6.0",
