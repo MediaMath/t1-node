@@ -1,5 +1,6 @@
 var expect = require('./chai_config').expect;
 var t1 = require('../index');
+require('dotenv').load();
 
 describe("Get, create and save Entities", function () {
 
@@ -9,9 +10,11 @@ describe("Get, create and save Entities", function () {
         api_key: process.env.T1SANDBOX_API_KEY,
         client_secret: process.env.T1SANDBOX_SECRET,
         apiBaseUrl: 'https://t1sandbox.mediamath.com',
-        redirect_uri: 'https://blog.mediamath.com/'
+        redirect_uri: 'https://blog.mediamath.com/',
+        advertiser_id: parseInt(process.env.T1SANDBOX_ADVERTISER)
+        // Tests will return 403 if user does not have access to advertiser
     };
-
+    console.log(t1conf);
     var conn = new t1.T1Connection(t1conf);
     var testTimestamp = new Date().toISOString();
     var expectedName = "t1-node test " + testTimestamp;
@@ -23,7 +26,7 @@ describe("Get, create and save Entities", function () {
         it("should save a new campaign", function () {
             campaign.ad_server_id = 9;
             campaign.name = expectedName + ' campaign';
-            campaign.advertiser_id = 154359;
+            campaign.advertiser_id = t1conf.advertiser_id;
             campaign.status = false;
             var start = new Date(),
                 end = new Date();

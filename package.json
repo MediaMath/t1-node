@@ -20,7 +20,8 @@
     "sinon": "~1.12.0",
     "sinon-chai": "~2.6.0",
     "simple-oauth2": "^1.0.0",
-    "istanbul": "^0.4.5"
+    "istanbul": "^0.4.5",
+    "dotenv": "^4.0.0"
   },
   "dependencies": {
     "bluebird": "^3.3.4",
@@ -32,6 +33,7 @@
   "scripts": {
     "lint": "jshint lib/**.js",
     "test": "mocha test",
+    "integration": "mocha integration-test",
     "posttest": "npm run lint"
   }
 }
