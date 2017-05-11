@@ -5,16 +5,15 @@ require('dotenv').load();
 describe("Get, create and save Entities", function () {
 
     t1conf = {
-        user: process.env.T1SANDBOX_API_USERNAME,
-        password: process.env.T1SANDBOX_API_PASSWORD,
-        api_key: process.env.T1SANDBOX_API_KEY,
-        client_secret: process.env.T1SANDBOX_SECRET,
-        apiBaseUrl: 'https://t1sandbox.mediamath.com',
-        redirect_uri: 'https://blog.mediamath.com/',
-        advertiser_id: parseInt(process.env.T1SANDBOX_ADVERTISER)
+        user: process.env.T1_API_USERNAME,
+        password: process.env.T1_API_PASSWORD,
+        api_key: process.env.T1_API_KEY,
+        client_secret: process.env.T1_SECRET,
+        apiBaseUrl: process.env.T1_BASEURL,
+        redirect_uri: process.env.T1_REDIRECTURL,
+        advertiser_id: parseInt(process.env.T1_ADVERTISER)
         // Tests will return 403 if user does not have access to advertiser
     };
-    console.log(t1conf);
     var conn = new t1.T1Connection(t1conf);
     var testTimestamp = new Date().toISOString();
     var expectedName = "t1-node test " + testTimestamp;
