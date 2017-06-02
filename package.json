@@ -19,7 +19,6 @@
     "mocha": "3.4.1",
     "sinon": "2.2.0",
     "sinon-chai": "2.10.0",
-    "simple-oauth2": "^1.0.0",
     "istanbul": "^0.4.5",
     "dotenv": "^4.0.0"
   },
@@ -29,7 +28,8 @@
     "json-refs": "3.0.0",
     "jsonschema": "^1.1.0",
     "querystring": "^0.2.0",
-    "request-promise": "4.2.1"
+    "request-promise": "4.2.1",
+    "simple-oauth2": "^1.0.0"
   },
   "scripts": {
     "lint": "jshint lib/**.js",
