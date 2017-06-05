@@ -13,7 +13,7 @@ Checkout, then `npm install .`
 
 For cookie authentication:
 ``` js
-var t1 = require('terminalone');
+var t1 = require('@mediamath/terminalone');
 var config = {
   'user': t1_username,
   'password': t1_user_password,
@@ -25,7 +25,7 @@ var connection = new t1.T1Connection(config);
 For oauth2 authentication, your web application will need to redirect to the T1 user authentication page during the process. The approach is outlined below:
 
 ``` js
-var t1 = require('terminalone');
+var t1 = require('@mediamath/terminalone');
 //the callback URL should match the one you specified in the developer portal for your application
 var config = {
   'api_key': application_mashery_key, 
