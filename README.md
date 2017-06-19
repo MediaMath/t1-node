@@ -74,13 +74,14 @@ Returns a generator to entities
 var userParams = {
   'page_limit':10
   };
+var that = this;
 t1.EntityList.get('campaigns', connection,  userParams)
 .then(function(list) {
-  pg1 = list;
+  that.pg1 = list;
   return t1.EntityList.getNextPage(pg1, connection)
   })
     .then(function(list) {
-    pg2 = list;
+    that.pg2 = list;
     for (var entity of list.entities) {console.log(entity)}});
   
 ```
@@ -94,8 +95,9 @@ var userParams = {
   'page_limit':10,
   'with':['strategies']
   };
+var that = this;
 t1.EntityList.get('campaigns', connection,  userParams).then(function(list) {
-  pg1 = list;
+  that.pg1 = list;
   for (var entity of list.entities) {console.log(entity)}});
 ```
 
