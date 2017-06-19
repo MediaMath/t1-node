@@ -57,11 +57,13 @@ Retrieve, edit and save a single entity
 var agencyPromise = new t1.Entity('agency')
   .get(1234, connection)
   .then(function(agency) {
-    this.agency = agency;
+    agency = agency;
     agency.name = 'new name';
-    agency.save(connection).then(function () {
+    return agency.save(connection)
+    })
+    .then(function () {
       console.log('saved')})
-    });
+    .catch(error => console.log(error));
 ```
 
 ##### Entity Lists
@@ -72,12 +74,15 @@ Returns a generator to entities
 var userParams = {
   'page_limit':10
   };
-t1.EntityList.get('campaigns', connection,  userParams).then(function(list) {
-  this.pg1 = list;
-  t1.EntityList.getNextPage(pg1, connection).then(function(list) {
-    this.pg2 = list });
-  for (var entity of this.pg1.entities) {console.log(entity)}
-  });
+t1.EntityList.get('campaigns', connection,  userParams)
+.then(function(list) {
+  pg1 = list;
+  return t1.EntityList.getNextPage(pg1, connection)
+  })
+    .then(function(list) {
+    pg2 = list;
+    for (var entity of list.entities) {console.log(entity)}});
+  
 ```
 
 
@@ -86,11 +91,11 @@ It's possible to include related entities by including in a 'with' property in u
 
 ``` js
 var userParams = {
-  'page_limit':10
+  'page_limit':10,
   'with':['strategies']
   };
 t1.EntityList.get('campaigns', connection,  userParams).then(function(list) {
-  this.pg1 = list;
+  pg1 = list;
   for (var entity of list.entities) {console.log(entity)}});
 ```
 
