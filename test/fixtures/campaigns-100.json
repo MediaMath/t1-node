@@ -502,7 +502,7 @@
     }
   ],
   "meta": {
-    "next_page": "https://api.mediamath.com/api/v2.0/campaigns?page_offset=100&api_key=q6su6nn9fjsamr37p5tv5kc5",
+    "next_page": "https://api.mediamath.com/api/v2.0/campaigns?page_offset=100&api_key=noapikey",
     "etag": "2f5baa394203cee2b85dfac0f179bb6e5b8e4022",
     "count": 100,
     "called_on": "2015-11-09T12:04:23+0000",
