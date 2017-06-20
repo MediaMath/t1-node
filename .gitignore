@@ -35,4 +35,3 @@ node_modules
 
 # Environment Variables for integration tests
 .env
-!/integration-test/EntityList.js
