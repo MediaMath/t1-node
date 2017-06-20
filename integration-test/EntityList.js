@@ -1,10 +1,11 @@
+"use strict";
 var expect = require('./chai_config').expect;
 var t1 = require('../index');
 require('dotenv').load();
 
 describe("Request an entity list and page through it", function () {
 
-    t1conf = {
+    let t1conf = {
         user: process.env.T1_API_USERNAME,
         password: process.env.T1_API_PASSWORD,
         api_key: process.env.T1_API_KEY,
@@ -14,7 +15,7 @@ describe("Request an entity list and page through it", function () {
         advertiser_id: parseInt(process.env.T1_ADVERTISER)
         // Tests will return 403 if user does not have access to advertiser
     };
-    var conn = new t1.T1Connection(t1conf);
+    let conn = new t1.T1Connection(t1conf);
 
 
     describe("#request a list of ten campaigns", function () {

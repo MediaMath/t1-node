@@ -1,4 +1,4 @@
-var BPromise = require('bluebird');
+"use strict";
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
 var common = require('./test-common');
@@ -27,7 +27,7 @@ describe("entityList", function () {
         var userParams = {'page_limit': 10};
 
         it("should have 10 entities", function () {
-            parsedResult = common.loadFixture('campaigns-10');
+            let parsedResult = common.loadFixture('campaigns-10');
 
 
             let conn = new ConnectionStub();
@@ -50,7 +50,7 @@ describe("entityList", function () {
         var userParams = {};
 
         it("should have request the correct next page of entities", function () {
-            parsedResult = common.loadFixture('campaigns-100');
+            let parsedResult = common.loadFixture('campaigns-100');
 
             let conn = new ConnectionStub();
 
