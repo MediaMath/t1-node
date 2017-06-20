@@ -39,7 +39,7 @@ describe("entityList", function () {
                     expect(data).to.have.property('meta')
                         .and.have.property('count', userParams.page_limit);
                     expect(conn.get.called).to.equal(true);
-                    expect(conn.get.getCall(0).args[0]).equal("/api/v2.0/campaigns?page_offset=100&api_key=noapikey");
+                    expect(conn.get.getCall(0).args[0]).equal("/api/v2.0/campaigns?page_limit=10&api_key=noapikey");
                 }
             );
         });
@@ -61,7 +61,7 @@ describe("entityList", function () {
                 return service.getNextPage(page1, conn)
             }).then(function (page2) {
                 expect(conn.get.callCount).to.equal(2)
-                expect(conn.get.getCall(1).args[0]).equal("/api/v2.0/campaigns?page_limit=10&api_key=noapikey");
+                expect(conn.get.getCall(1).args[0]).equal("/api/v2.0/campaigns?page_offset=100&api_key=noapikey");
             });
         });
     });
