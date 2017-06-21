@@ -19,12 +19,12 @@ describe("Request an entity list and page through it", function () {
 
 
     describe("#request a list of ten campaigns", function () {
+        this.timeout(10000);
         var userParams = {
             'page_limit':10
         };
 
-
-        it("should retrive 10 campaigns", function () {
+        it("should retrieve 10 campaigns", function () {
             let listPromise = t1.EntityList.get('campaigns', conn,  userParams);
 
             return expect(listPromise).to.eventually
