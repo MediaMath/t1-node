@@ -9,13 +9,6 @@ describe("Get, create and save Entities", function() {
         user: process.env.T1_API_USERNAME,
         password: process.env.T1_API_PASSWORD,
         api_key: process.env.T1_API_KEY,
-        client_secret: process.env.T1_SECRET,
-        apiBaseUrl: process.env.T1_BASEURL,
-        redirect_uri: process.env.T1_REDIRECTURL,
-        advertiser_id: parseInt(process.env.T1_ADVERTISER),
-        auth_url: process.env.T1_AUTH_URL,
-        client_id: process.env.T1_CLIENT_ID,
-        client_secret: process.env.T1_CLIENT_SECRET,
         // Tests will return 403 if user does not have access to advertiser
     };
 
@@ -30,7 +23,7 @@ describe("Get, create and save Entities", function() {
         it("should save a new campaign", function() {
             campaign.ad_server_id = 9;
             campaign.name = expectedName + ' campaign';
-            campaign.advertiser_id = t1conf.advertiser_id;
+            campaign.advertiser_id = parseInt(process.env.T1_ADVERTISER),;
             campaign.status = false;
             var start = new Date(),
                 end = new Date();
