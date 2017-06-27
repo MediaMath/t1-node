@@ -3,7 +3,7 @@ var t1 = require('../index');
 require('dotenv').load();
 
 describe('Get Reports', function() {
-
+    this.timeout(10000);
     t1conf = {
         // To run these test, set the dotenv variables by copying .env.template and filling in the parameters.
         user: process.env.T1_API_USERNAME,

@@ -1,77 +1,68 @@
-var BPromise = require('bluebird');
+"use strict";
 var expect = require('./chai_config').expect;
 var sinon = require('sinon');
 var common = require('./test-common');
 var t1 = require('../index');
 
-
 describe("entityList", function () {
-
-    var connectionStub = {};
-    connectionStub.get = function () {
-    };
-    connectionStub.post = function () {
-    };
-    connectionStub.buildQueryString = function () {
-        return "";
-    };
-    var sandbox, getStub, postStub;
-    var parsedResult = "aisdaiusd";
 
     var service = t1.EntityList;
 
-    beforeEach(function () {
-        sandbox = sinon.sandbox.create();
+    class ConnectionStub {
 
-        postStub = sandbox.stub(connectionStub, "post")
-            .returns(BPromise.try(function () {
-                return parsedResult;
-            }));
-    });
+        get() {
+        };
 
-    afterEach(function () {
-        sandbox.restore();
-    });
+        post() {
+            return ""
+        };
+
+        buildQueryString(base, userParams) {
+            var t1Connection = new t1.T1Connection();
+            return t1Connection.buildQueryString(base, userParams)
+        };
+    }
 
     describe("#get with count", function () {
         var userParams = {'page_limit': 10};
 
         it("should have 10 entities", function () {
-            parsedResult = common.loadFixture('campaigns-10');
+            let parsedResult = common.loadFixture('campaigns-10');
 
-            getStub = sandbox.stub(connectionStub, "get")
-                .returns(BPromise.try(function () {
-                    return parsedResult;
-                }));
-            var campaigns = service.get('campaigns', connectionStub, userParams);
 
-            return expect(campaigns).to.eventually
-                    .have.property('entities') &&
+            let conn = new ConnectionStub();
 
-                expect(campaigns).to.eventually
-                    .have.property('meta')
-                    .and.have.property('count', userParams.page_limit);
+            sinon.stub(conn, 'get')
+                .resolves(parsedResult);
 
+            return service.get('campaigns', conn, userParams).then(function (data) {
+                    expect(data).to.have.property('meta')
+                        .and.have.property('count', userParams.page_limit);
+                    expect(conn.get.called).to.equal(true);
+                    expect(conn.get.getCall(0).args[0]).equal("/api/v2.0/campaigns?page_limit=10&api_key=noapikey");
+                }
+            );
         });
     });
 
-    describe("#get first page", function () {
+
+    describe("#get next page", function () {
         var userParams = {};
 
-        it("should have 100 entities", function () {
-            parsedResult = common.loadFixture('campaigns-100');
+        it("should have request the correct next page of entities", function () {
+            let parsedResult = common.loadFixture('campaigns-100');
 
-            getStub = sandbox.stub(connectionStub, "get")
-                .returns(BPromise.try(function () {
-                    return parsedResult;
-                }));
-            var campaigns = service.get('campaigns', connectionStub, userParams);
+            let conn = new ConnectionStub();
 
-            return expect(campaigns).to.eventually
-                    .have.property('entities') &&
-                expect(campaigns).to.eventually
-                    .have.property('meta').and.have.property('next_page');
+            sinon.stub(conn, 'get')
+                .resolves(parsedResult);
+
+            return service.get('campaigns', conn, userParams).then(function (page1) {
+                return service.getNextPage(page1, conn)
+            }).then(function (page2) {
+                expect(conn.get.callCount).to.equal(2)
+                expect(conn.get.getCall(1).args[0]).equal("/api/v2.0/campaigns?page_offset=100&api_key=noapikey");
+            });
         });
-
     });
 });
