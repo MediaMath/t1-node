@@ -100,7 +100,7 @@ describe("entity", function () {
 
         it("should flatten currency data", function () {
             var amt = campaign.getCurrencyValue('goal_value');
-            var form = campaign._getPostData();
+            var form = campaign._getPostFormData();
 
             return expect(form).to.eventually
                 .have.property('goal_value', amt);
