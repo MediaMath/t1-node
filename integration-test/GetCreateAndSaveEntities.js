@@ -6,6 +6,7 @@ require('dotenv').load();
 describe("Get, create and save Entities", function() {
 
     t1conf = {
+        preferCookieAuth: true,
         user: process.env.T1_API_USERNAME,
         password: process.env.T1_API_PASSWORD,
         api_key: process.env.T1_API_KEY,
@@ -23,7 +24,7 @@ describe("Get, create and save Entities", function() {
         it("should save a new campaign", function() {
             campaign.ad_server_id = 9;
             campaign.name = expectedName + ' campaign';
-            campaign.advertiser_id = parseInt(process.env.T1_ADVERTISER),;
+            campaign.advertiser_id = parseInt(process.env.T1_ADVERTISER);
             campaign.status = false;
             var start = new Date(),
                 end = new Date();
@@ -192,24 +193,3 @@ describe("Get, create and save Entities", function() {
         });
     });
 });
-
-
-    describe("Test Oauth login", function() {
-
-    var t1conf = {
-        user: process.env.T1_API_USERNAME,
-        password: process.env.T1_API_PASSWORD,
-        client_id: process.env.T1_CLIENT_ID,
-        client_secret: process.env.T1_CLIENT_SECRET,
-    };
-
-    var conn = new t1.T1Connection(t1conf);
-
-    it("should return return an authorization token", function() {
-        var tokenPromise = conn.getToken();
-
-        return expect(conn).to.have.property('oAuth2Token');
-    });
-
-});
-
