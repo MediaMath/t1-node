@@ -10,11 +10,6 @@ describe('Get Reports', function() {
         user: process.env.T1_API_USERNAME,
         password: process.env.T1_API_PASSWORD,
         api_key: process.env.T1_API_KEY,
-        client_secret: process.env.T1_SECRET,
-        apiBaseUrl: process.env.T1_BASEURL,
-        redirect_uri: process.env.T1_REDIRECTURL,
-        advertiser_id: parseInt(process.env.T1_ADVERTISER)
-        // Tests will return 403 if user does not have access to advertiser
     };
     let conn = new t1.T1Connection(t1conf);
 
@@ -35,8 +30,9 @@ describe('Get Reports', function() {
             time_window: 'yesterday',
             time_rollup: 'by_day',
             dimensions: 'advertiser_id',
-            filter: 'advertiser_id=' + t1conf.advertiser_id
-        });
-        return expect(reportPromise).to.eventually.have.property('errors').to.be.empty;
+            filter: 'advertiser_id=' + parseInt(process.env.T1_ADVERTISER),
+        })
+        return expect(reportPromise).to.eventually.have.property('errors').to.be.empty
+        expect(reportPromise).to.eventually.have.deep.property('data.start_date');
     });
 });

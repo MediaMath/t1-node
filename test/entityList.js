@@ -8,6 +8,8 @@ describe("entityList", function () {
 
     var service = t1.EntityList;
 
+    var t1config = {};
+
     class ConnectionStub {
 
         get() {
@@ -18,7 +20,7 @@ describe("entityList", function () {
         };
 
         buildQueryString(base, userParams) {
-            var t1Connection = new t1.T1Connection();
+            var t1Connection = new t1.T1Connection(t1config);
             return t1Connection.buildQueryString(base, userParams)
         };
     }
@@ -61,7 +63,7 @@ describe("entityList", function () {
                 return service.getNextPage(page1, conn)
             }).then(function (page2) {
                 expect(conn.get.callCount).to.equal(2)
-                expect(conn.get.getCall(1).args[0]).equal("/api/v2.0/campaigns?page_offset=100&api_key=noapikey");
+                expect(conn.get.getCall(1).args[0]).equal("https://api.mediamath.com/api/v2.0/campaigns?page_offset=100&api_key=noapikey");
             });
         });
     });
