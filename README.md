@@ -11,42 +11,44 @@ Checkout, then `npm install .`
 
 # Usage
 
-For cookie authentication:
+T1 Node uses dotenv for easy management of environment variables. Copy .env.template to .env and fill in your details. 
+
+To get an API key, see https://apidocs.mediamath.com
+
+# Cookie Authentication (default):
+
+Required Env variables:
+`T1_API_USERNAME`
+`T1_API_PASSWORD`
+`T1_API_KEY`
+
 ``` js
 var t1 = require('@mediamath/terminalone');
 var config = {
-  'user': t1_username,
-  'password': t1_user_password,
-  'api_key': application_mashery_key
+  preferCookieAuth: true,
+  user: process.env.T1_API_USERNAME,
+  password: process.env.T1_API_PASSWORD,
+  api_key: process.env.T1_API_KEY
   };
 var connection = new t1.T1Connection(config);
 ```
 
-For oauth2 authentication, your web application will need to redirect to the T1 user authentication page during the process. The approach is outlined below:
+## OAuth2 (Password - Resource Owner flow):
 
-``` js
-var t1 = require('@mediamath/terminalone');
-//the callback URL should match the one you specified in the developer portal for your application
-var config = {
-  'api_key': application_mashery_key, 
-  'client_secret': application_mashery_secret,
-  'redirect_uri': application_callback_url
-}
+T1 Node is designed to be used for scripts. If you wish to make a UI for 3rd parties, we recommend use use the Application Code flow, which may require a little more engineering than what's covered here.
+Note: As of 2017-06-29 OAuth2 is not available everywhere within the MediaMath environment. Until then, for production, we recommend using the Cookie flow. This message will be updated with more services as the rollout completes.
 
-var connection = new t1.T1Connection(config);
-
-// tokenUpdatedCallback is an optional callback to a function, taking
-// a single argument which describes an access token. 
-// This can be used update your token databse on automatic token refresh. 
-var authorizationUrl = connection.fetchAuthUrl(tokenUpdatedCallback);
-
-// Redirect example using Express (see http://expressjs.com/api.html#res.redirect)
-res.redirect(authorizationUri);
-
-var code = // Get the access token object (the authorization code is given from the previous step).
-connection.getToken(code)
-		    .then(console.log('oauth complete'));
 ```
+t1conf = {
+    preferCookieAuth: false,
+    user: process.env.T1_API_USERNAME,
+    password: process.env.T1_API_PASSWORD,
+    client_id: process.env.T1_CLIENT_ID,
+    client_secret: process.env.T1_CLIENT_SECRET,
+};
+var connection = new t1.T1Connection(config);
+```
+
 
 
 #### Single Entities
