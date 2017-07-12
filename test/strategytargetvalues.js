@@ -11,7 +11,7 @@ describe('strategy target values', function () {
   };
   connectionStub.post = function () {
   };
-  let sandbox;
+  var sandbox;
   let parsedResult = 'aisdaiusd';
 
   beforeEach(function () {
