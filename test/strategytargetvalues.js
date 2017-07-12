@@ -12,7 +12,7 @@ describe('strategy target values', function () {
   connectionStub.post = function () {
   };
   var sandbox;
-  let parsedResult = 'aisdaiusd';
+  var parsedResult = 'aisdaiusd';
 
   beforeEach(function () {
     sandbox = sinon.sandbox.create();
