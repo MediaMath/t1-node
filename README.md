@@ -3,6 +3,7 @@ t1-node
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1ed36fa05e24460490ac44b3ff1e3307)](https://www.codacy.com/app/fsargent/t1-node?utm_source=github.com&utm_medium=referral&utm_content=MediaMath/t1-node&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/MediaMath/t1-node.svg?branch=master)](https://travis-ci.org/MediaMath/t1-node)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FMediaMath%2Ft1-node.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FMediaMath%2Ft1-node?ref=badge_shield)
 
 Node implementation of a T1 API Library. Uses [Bluebird](http://bluebirdjs.com/docs/getting-started.html) for fast, simple callback handling via promises.
 
