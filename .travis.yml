@@ -1,11 +1,7 @@
 language: node_js
 node_js:
-  - "4.0"
-script: istanbul cover node_modules/mocha/bin/_mocha
-addons:
-  code_climate:
-    repo_token: CODECLIMATE_TOKEN 
-after_success:
-  - npm install -g codeclimate-test-reporter
-  - codeclimate-test-reporter < ./coverage/lcov.info
-
+  - "7.0"
+script: npm run test 
+cache:
+  directories:
+    - "node_modules"
