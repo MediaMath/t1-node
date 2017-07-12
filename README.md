@@ -1,6 +1,8 @@
 t1-node
 =======
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1ed36fa05e24460490ac44b3ff1e3307)](https://www.codacy.com/app/fsargent/t1-node?utm_source=github.com&utm_medium=referral&utm_content=MediaMath/t1-node&utm_campaign=badger)
+
 Node implementation of a T1 API Library. Uses [Bluebird](http://bluebirdjs.com/docs/getting-started.html) for fast, simple callback handling via promises.
 
 ### Compilation/Installation
