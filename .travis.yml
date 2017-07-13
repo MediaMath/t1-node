@@ -3,7 +3,7 @@ node_js:
   - "7"
   - "6"
   - "4"
-script: npm run test 
+script: npm run coverage-report
 cache:
   directories:
     - "node_modules"
