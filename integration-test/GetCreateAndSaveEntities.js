@@ -9,7 +9,7 @@ describe('Get, create and save Entities', function () {
     preferCookieAuth: true,
     user: process.env.T1_API_USERNAME,
     password: process.env.T1_API_PASSWORD,
-    api_key: process.env.T1_API_KEY,
+    api_key: process.env.T1_API_KEY
     // Tests will return 403 if user does not have access to advertiser
   };
 

@@ -9,7 +9,7 @@ describe('Get Reports', function () {
     // To run these test, set the dotenv variables by copying .env.template and filling in the parameters.
     user: process.env.T1_API_USERNAME,
     password: process.env.T1_API_PASSWORD,
-    api_key: process.env.T1_API_KEY,
+    api_key: process.env.T1_API_KEY
   };
   let conn = new t1.T1Connection(t1conf);
 
@@ -30,7 +30,7 @@ describe('Get Reports', function () {
       time_window: 'yesterday',
       time_rollup: 'by_day',
       dimensions: 'advertiser_id',
-      filter: 'advertiser_id=' + parseInt(process.env.T1_ADVERTISER),
+      filter: 'advertiser_id=' + parseInt(process.env.T1_ADVERTISER)
     });
     return expect(reportPromise).to.eventually.have.property('errors').to.be.empty;
   });
