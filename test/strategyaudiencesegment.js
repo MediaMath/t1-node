@@ -1,12 +1,11 @@
-var BPromise = require('bluebird');
-var expect = require('./chai_config').expect;
-var sinon = require('sinon');
-var t1 = require('../index');
-var common = require('./test-common');
+const BPromise = require('bluebird');
+const expect = require('./chai_config').expect;
+const sinon = require('sinon');
+const t1 = require('../index');
+const common = require('./test-common');
 
-describe('strategy audience segments', function () {
-
-  var connectionStub = {};
+describe('strategy audience segments', () => {
+  const connectionStub = {};
   connectionStub.get = function () {
   };
   connectionStub.post = function () {
@@ -14,33 +13,29 @@ describe('strategy audience segments', function () {
   connectionStub.buildQueryString = function () {
     return '';
   };
-  var sandbox;
-  var parsedResult = 'aisdaiusd';
+  let sandbox;
+  let parsedResult = 'aisdaiusd';
 
-  beforeEach(function () {
+  beforeEach(() => {
     sandbox = sinon.sandbox.create();
-    sandbox.stub(connectionStub, 'get').returns(BPromise.try(function () {
-      return parsedResult;
-    }));
-    sandbox.stub(connectionStub, 'post').returns(BPromise.try(function () {
-      return parsedResult;
-    }));
+    sandbox.stub(connectionStub, 'get').returns(BPromise.try(() => parsedResult));
+    sandbox.stub(connectionStub, 'post').returns(BPromise.try(() => parsedResult));
   });
 
-  afterEach(function () {
+  afterEach(() => {
     sandbox.restore();
   });
 
-  describe('#get strategy audience segments', function () {
+  describe('#get strategy audience segments', () => {
     parsedResult = common.loadFixture('strategy-audience-segments');
 
-    var audienceSegments = new t1.StrategyAudienceSegments();
+    let audienceSegments = new t1.StrategyAudienceSegments();
 
-    it('should have strategy audience segments', function () {
+    it('should have strategy audience segments', () => {
       audienceSegments = audienceSegments.get(1171990, connectionStub);
 
-      return expect(audienceSegments).to.eventually.
-        have.property('strategy_id', 1171990) &&
+      return expect(audienceSegments).to.eventually
+        .have.property('strategy_id', 1171990) &&
 
         expect(audienceSegments).to.eventually
           .have.property('include')
@@ -57,27 +52,26 @@ describe('strategy audience segments', function () {
     });
   });
 
-  describe('#update audience', function () {
+  describe('#update audience', () => {
     parsedResult = common.loadFixture('strategy-audience-segments');
 
-    var audienceSegments = new t1.StrategyAudienceSegments();
+    const audienceSegments = new t1.StrategyAudienceSegments();
     audienceSegments.include = [1];
     audienceSegments.exclude = [119];
     audienceSegments.include_op = 'OR';
     audienceSegments.exclude_op = 'OR';
 
 
-    it('should generate the correct formdata for posting', function () {
-
-      var expected = {
-        'include_op': 'OR',
-        'exclude_op': 'OR',
+    it('should generate the correct formdata for posting', () => {
+      const expected = {
+        include_op: 'OR',
+        exclude_op: 'OR',
         'segments.1.id': 1,
         'segments.1.restriction': 'INCLUDE',
         'segments.2.id': 119,
-        'segments.2.restriction': 'EXCLUDE'
+        'segments.2.restriction': 'EXCLUDE',
       };
-      var formdata = audienceSegments._generateForm();
+      const formdata = audienceSegments._generateForm();
 
       return expect(formdata).to.eventually.deep.equal(expected);
     });

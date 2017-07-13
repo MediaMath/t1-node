@@ -1,76 +1,70 @@
-var BPromise = require('bluebird');
-var expect = require('./chai_config').expect;
-var sinon = require('sinon');
-var t1 = require('../index');
-var common = require('./test-common');
+const BPromise = require('bluebird');
+const expect = require('./chai_config').expect;
+const sinon = require('sinon');
+const t1 = require('../index');
+const common = require('./test-common');
 
-describe('strategy target values', function () {
-
-  var connectionStub = {};
+describe('strategy target values', () => {
+  const connectionStub = {};
   connectionStub.get = function () {
   };
   connectionStub.post = function () {
   };
-  var sandbox;
-  var parsedResult = 'aisdaiusd';
+  let sandbox;
+  let parsedResult = 'aisdaiusd';
 
-  beforeEach(function () {
+  beforeEach(() => {
     sandbox = sinon.sandbox.create();
-    sandbox.stub(connectionStub, 'get').returns(BPromise.try(function () {
-      return parsedResult;
-    }));
-    sandbox.stub(connectionStub, 'post').returns(BPromise.try(function () {
-      return parsedResult;
-    }));
+    sandbox.stub(connectionStub, 'get').returns(BPromise.try(() => parsedResult));
+    sandbox.stub(connectionStub, 'post').returns(BPromise.try(() => parsedResult));
   });
 
-  afterEach(function () {
+  afterEach(() => {
     sandbox.restore();
   });
 
-  describe('#get strategy target values', function () {
+  describe('#get strategy target values', () => {
     parsedResult = common.loadFixture('strategy-target-values');
-    var targetingSegments = new t1.StrategyTargetValues();
-    it('should have strategy target dimensions and values', function () {
+    let targetingSegments = new t1.StrategyTargetValues();
+    it('should have strategy target dimensions and values', () => {
       targetingSegments = targetingSegments.get(123456, connectionStub);
 
-      var expectedDimensions = [
+      const expectedDimensions = [
         {
           code: 'REGN',
           operation: 'OR',
           restriction: 'INCLUDE',
-          value_ids: [251, 23]
+          value_ids: [251, 23],
         },
         {
           code: 'REGN',
           operation: 'OR',
           restriction: 'EXCLUDE',
-          value_ids: [31]
+          value_ids: [31],
         },
         {
           code: 'DMAX',
           operation: 'OR',
           restriction: 'INCLUDE',
-          value_ids: [99846]
+          value_ids: [99846],
         }];
 
-      return expect(targetingSegments).to.eventually.
-        have.property('strategy_id', 123456) &&
+      return expect(targetingSegments).to.eventually
+        .have.property('strategy_id', 123456) &&
         expect(targetingSegments).to.eventually
           .have.property('dimensions')
           .and.deep.equal(expectedDimensions);
     });
   });
 
-  describe('#update targeting', function () {
-    var targetingDimensions = new t1.StrategyTargetValues();
+  describe('#update targeting', () => {
+    const targetingDimensions = new t1.StrategyTargetValues();
     targetingDimensions.addTargetValues('REGN', 'INCLUDE', 'OR', [23, 251]);
     targetingDimensions.addTargetValues('REGN', 'EXCLUDE', 'OR', [31]);
     targetingDimensions.addTargetValues('DMAX', 'INCLUDE', 'OR', [99846]);
 
-    it('should generate the correct formdata for posting', function () {
-
-      var expected = {
+    it('should generate the correct formdata for posting', () => {
+      const expected = {
         'dimensions.1.code': 'REGN',
         'dimensions.1.restriction': 'INCLUDE',
         'dimensions.1.operation': 'OR',
@@ -82,9 +76,9 @@ describe('strategy target values', function () {
         'dimensions.3.code': 'DMAX',
         'dimensions.3.restriction': 'INCLUDE',
         'dimensions.3.operation': 'OR',
-        'dimensions.3.value_ids': '99846'
+        'dimensions.3.value_ids': '99846',
       };
-      var formdata = targetingDimensions._generateForm();
+      const formdata = targetingDimensions._generateForm();
 
       return expect(formdata).to.eventually.deep.equal(expected);
     });
