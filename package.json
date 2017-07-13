@@ -16,8 +16,9 @@
     "chai": "^4.0.0",
     "chai-as-promised": "^7.0.0",
     "codacy-coverage": "^2.0.2",
-    "dotenv": "^4.0.0",
-    "eslint": "^4.2.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-mocha": "^4.11.0",
     "fast-deep-equal": "^1.0.0",
     "istanbul": "^0.4.5",
@@ -28,6 +29,7 @@
     "sinon-chai": "^2.11.0"
   },
   "dependencies": {
+    "dotenv": "^4.0.0",
     "babyparse": "^0.4.6",
     "bluebird": "^3.3.4",
     "json-refs": "3.0.0",

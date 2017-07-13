@@ -9,7 +9,7 @@
     "jasmine": true
   },
   "extends": [
-    "eslint:recommended"
+    "airbnb-base"
   ],
   "parserOptions": {
     "sourceType": "module"
