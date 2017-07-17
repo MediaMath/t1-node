@@ -1,3 +1,5 @@
+'use strict'; // eslint-disable-line
+
 const BPromise = require('bluebird');
 const expect = require('./chai_config').expect;
 const sinon = require('sinon');
