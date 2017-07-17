@@ -33,6 +33,7 @@
     ],
     "no-console": "off",
     "mocha/no-exclusive-tests": "error",
-    "camelcase": "off"
+    "camelcase": "off",
+    "no-param-reassign": "off"
   }
 }
