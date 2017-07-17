@@ -8,9 +8,9 @@ const common = require('./test-common');
 
 describe('strategy target values', () => {
   const connectionStub = {};
-  connectionStub.get = function () {
+  connectionStub.get = function get() {
   };
-  connectionStub.post = function () {
+  connectionStub.post = function get() {
   };
   let sandbox;
   let parsedResult = 'aisdaiusd';

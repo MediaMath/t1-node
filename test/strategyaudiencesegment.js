@@ -8,11 +8,11 @@ const common = require('./test-common');
 
 describe('strategy audience segments', () => {
   const connectionStub = {};
-  connectionStub.get = function () {
+  connectionStub.get = function get() {
   };
-  connectionStub.post = function () {
+  connectionStub.post = function get() {
   };
-  connectionStub.buildQueryString = function () {
+  connectionStub.buildQueryString = function buildQueryString() {
     return '';
   };
   let sandbox;

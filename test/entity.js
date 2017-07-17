@@ -8,11 +8,11 @@ const common = require('./test-common.js');
 
 describe('entity', () => {
   const connectionStub = {};
-  connectionStub.get = function () {
+  connectionStub.get = function get() {
   };
-  connectionStub.post = function () {
+  connectionStub.post = function post() {
   };
-  connectionStub.buildQueryString = function () {
+  connectionStub.buildQueryString = function buildQueryString() {
     return '';
   };
   let sandbox;

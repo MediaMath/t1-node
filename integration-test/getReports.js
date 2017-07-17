@@ -1,12 +1,12 @@
-
 const expect = require('./chai_config').expect;
 const t1 = require('../index');
 require('dotenv').load();
 
-describe('Get Reports', function () {
+describe('Get Reports', function getReports() {
   this.timeout(10000);
   const t1conf = {
-    // To run these test, set the dotenv variables by copying .env.template and filling in the parameters.
+    // To run these test, set the dotenv variables by copying
+    // .env.template and filling in the parameters.
     user: process.env.T1_API_USERNAME,
     password: process.env.T1_API_PASSWORD,
     api_key: process.env.T1_API_KEY,
@@ -30,7 +30,7 @@ describe('Get Reports', function () {
       time_window: 'yesterday',
       time_rollup: 'by_day',
       dimensions: 'advertiser_id',
-      filter: `advertiser_id=${parseInt(process.env.T1_ADVERTISER)}`,
+      filter: `advertiser_id=${parseInt(process.env.T1_ADVERTISER, 10)}`,
     });
     return expect(reportPromise).to.eventually.have.property('errors').to.be.empty;
   });

@@ -24,10 +24,10 @@ describe('Get, create and save Entities', () => {
     it('should save a new campaign', () => {
       campaign.ad_server_id = 9;
       campaign.name = `${expectedName} campaign`;
-      campaign.advertiser_id = parseInt(process.env.T1_ADVERTISER);
+      campaign.advertiser_id = parseInt(process.env.T1_ADVERTISER, 10);
       campaign.status = false;
-      let start = new Date(),
-        end = new Date();
+      const start = new Date();
+      const end = new Date();
       start.setDate(start.getDate() + 1);
       end.setDate(start.getDate() + 7);
       campaign.start_date = start.toISOString();
@@ -48,13 +48,13 @@ describe('Get, create and save Entities', () => {
 
     it('should update name', () => {
       campaignId = campaign.id;
-      const expectedName = `${campaign.name}_UPDATED`;
+      const newExpectedName = `${campaign.name}_UPDATED`;
       const version = campaign.version;
-      campaign.name = expectedName;
+      campaign.name = newExpectedName;
       const campaignPromise = campaign.save(conn);
 
       return expect(campaignPromise).to.eventually
-        .have.property('name', expectedName) &&
+        .have.property('name', newExpectedName) &&
         expect(campaignPromise).to.eventually
           .have.property('version', version + 1);
     });
@@ -90,7 +90,7 @@ describe('Get, create and save Entities', () => {
     });
   });
 
-  describe('#set up target segments', function () {
+  describe('#set up target segments', function setUpTargeting() {
     this.timeout(10000);
     const targetSegments = new t1.StrategyTargetSegments();
 
@@ -132,7 +132,7 @@ describe('Get, create and save Entities', () => {
     });
   });
 
-  describe('#set up audience segments', function () {
+  describe('#set up audience segments', function setUpAudienceSegments() {
     this.timeout(10000);
     const audienceSegments = new t1.StrategyAudienceSegments();
 
@@ -169,7 +169,7 @@ describe('Get, create and save Entities', () => {
     });
   });
 
-  describe('#set up target dimensions', function () {
+  describe('#set up target dimensions', function setUpTargetDimensions() {
     this.timeout(10000);
     const targetValues = new t1.StrategyTargetValues();
 

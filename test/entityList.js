@@ -10,15 +10,17 @@ describe('entityList', () => {
   const t1config = {};
 
   class ConnectionStub {
-
     get() {
+      this.calls += 1;
     }
 
     post() {
+      this.calls += 1;
       return '';
     }
 
     buildQueryString(base, userParams) {
+      this.calls += 1;
       const t1Connection = new t1.T1Connection(t1config);
       return t1Connection.buildQueryString(base, userParams);
     }
@@ -65,7 +67,7 @@ describe('entityList', () => {
   });
 
   describe('#get list with child entities', () => {
-    const userParams = {with: ['strategies']};
+    const userParams = { with: ['strategies'] };
 
     it('it should include the child strategies', () => {
       const parsedResult = common.loadFixture('campaigns-with-strategies');
