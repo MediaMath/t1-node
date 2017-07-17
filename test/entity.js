@@ -90,7 +90,7 @@ describe('entity', () => {
 
     it('should flatten currency data', () => {
       const amt = campaign.getCurrencyValue('goal_value');
-      const form = campaign._getPostFormData();
+      const form = campaign.getPostFormData();
 
       return expect(form).to.eventually
         .have.property('goal_value', amt);
