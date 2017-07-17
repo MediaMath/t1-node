@@ -1,0 +1,143 @@
+{
+  "data": [
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 1",
+      "id": 1,
+      "strategies": [
+        {
+          "rel": "strategies",
+          "entity_type": "strategy",
+          "name": "Strategy 11",
+          "id": 11
+        }
+      ]
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 2",
+      "id": 2,
+      "strategies": [
+        {
+          "rel": "strategies",
+          "entity_type": "strategy",
+          "name": "Strategy 22",
+          "id": 22
+        }
+      ]
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 3",
+      "id": 3,
+      "strategies": [
+        {
+          "rel": "strategies",
+          "entity_type": "strategy",
+          "name": "Strategy 33",
+          "id": 33
+        }
+      ]
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 4",
+      "id": 4,
+      "strategies": [
+        {
+          "rel": "strategies",
+          "entity_type": "strategy",
+          "name": "Strategy 44",
+          "id": 44
+        }
+      ]
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 5",
+      "id": 5,
+      "strategies": [
+        {
+          "rel": "strategies",
+          "entity_type": "strategy",
+          "name": "Strategy 55",
+          "id": 55
+        }
+      ]
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 6",
+      "id": 6,
+      "strategies": [
+        {
+          "rel": "strategies",
+          "entity_type": "strategy",
+          "name": "Strategy 66",
+          "id": 66
+        }
+      ]
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 7",
+      "id": 7,
+      "strategies": [
+        {
+          "rel": "strategies",
+          "entity_type": "strategy",
+          "name": "Strategy 77",
+          "id": 77
+        }
+      ]
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 8",
+      "id": 8,
+      "strategies": [
+        {
+          "rel": "strategies",
+          "entity_type": "strategy",
+          "name": "Strategy 88",
+          "id": 88
+        }
+      ]
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 9",
+      "id": 9,
+      "strategies": [
+        {
+          "rel": "strategies",
+          "entity_type": "strategy",
+          "name": "Strategy 99",
+          "id": 99
+        }
+      ]
+    },
+    {
+      "entity_type": "campaign",
+      "name": "Campaign 10",
+      "id": 1,
+      "strategies": [
+        {
+          "rel": "strategies",
+          "entity_type": "strategy",
+          "name": "Strategy 11",
+          "id": 11
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "next_page": "https://api.mediamath.com/api/v2.0/campaigns?with=strategies&page_offset=10&api_key=noapikey",
+    "etag": "2f5baa394203cee2b85dfac0f179bb6e5b8e4022",
+    "count": 10,
+    "called_on": "2015-11-09T12:04:23+0000",
+    "status": "ok",
+    "offset": 0,
+    "total_count": "1896"
+  }
+}

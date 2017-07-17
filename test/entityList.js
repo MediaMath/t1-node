@@ -63,4 +63,23 @@ describe('entityList', () => {
       });
     });
   });
+
+  describe('#get list with child entities', () => {
+    const userParams = {with: ['strategies']};
+
+    it('it should include the child strategies', () => {
+      const parsedResult = common.loadFixture('campaigns-with-strategies');
+
+      const conn = new ConnectionStub();
+
+      sinon.stub(conn, 'get')
+        .resolves(parsedResult);
+
+      return service.get('campaigns', conn, userParams).then((data) => {
+        const campaign = data.entities.next().value;
+        const strategy = campaign.strategies.entities.next().value;
+        return expect(strategy.name).to.equal('Strategy 11');
+      });
+    });
+  });
 });
