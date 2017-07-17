@@ -1,4 +1,3 @@
-
 const expect = require('./chai_config').expect;
 const t1 = require('../index');
 require('dotenv').load();
@@ -17,7 +16,8 @@ describe('Get, and edit deals', () => {
   const conn = new t1.T1Connection(t1conf);
   const testTimestamp = new Date().toISOString();
 
-  describe('#get and update single deal', () => {
+  describe('#get and update single deal', function () {
+    this.timeout(100000);
     const deal = new t1.Entity('deal');
 
     it('should get an existing deal', () => {

@@ -15,8 +15,8 @@ describe('Get, create and save Entities', () => {
   const conn = new t1.T1Connection(t1conf);
   const testTimestamp = new Date().toISOString();
   const expectedName = `t1-node test ${testTimestamp}`;
-  let campaignId,
-    strategyId;
+  let campaignId;
+  let strategyId;
 
   describe('#create and update single campaign', () => {
     const campaign = new t1.Entity('campaign');
