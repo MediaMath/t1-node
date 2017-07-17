@@ -78,7 +78,7 @@ describe('strategy target values', () => {
         'dimensions.3.operation': 'OR',
         'dimensions.3.value_ids': '99846',
       };
-      const formdata = targetingDimensions._generateForm();
+      const formdata = targetingDimensions.generateForm();
 
       return expect(formdata).to.eventually.deep.equal(expected);
     });

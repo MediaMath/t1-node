@@ -71,7 +71,7 @@ describe('strategy audience segments', () => {
         'segments.2.id': 119,
         'segments.2.restriction': 'EXCLUDE',
       };
-      const formdata = audienceSegments._generateForm();
+      const formdata = audienceSegments.generateForm();
 
       return expect(formdata).to.eventually.deep.equal(expected);
     });

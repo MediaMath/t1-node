@@ -71,7 +71,7 @@ describe('strategy target segments', () => {
         'segments.2.restriction': 'EXCLUDE',
 
       };
-      const formdata = targetingSegments._generateForm();
+      const formdata = targetingSegments.generateForm();
 
       return expect(formdata).to.eventually.deep.equal(expected);
     });
