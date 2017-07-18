@@ -1,6 +1,6 @@
-var chai = require('chai');
-var chaiAsPromised = require('chai-as-promised');
-var sinonChai = require('sinon-chai');
+const chai = require('chai');
+const chaiAsPromised = require('chai-as-promised');
+const sinonChai = require('sinon-chai');
 
 chai.config.includeStack = true;
 
