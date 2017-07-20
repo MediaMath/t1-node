@@ -21,10 +21,12 @@ describe('Request an entity list and page through it', () => {
     const userParams = {
       page_limit: 10,
     };
-
+    const listPromise = t1.EntityList.get('campaigns', conn, userParams);
     it('should retrieve 10 campaigns', () => {
-      const listPromise = t1.EntityList.get('campaigns', conn, userParams);
-
+      return expect(listPromise).to.eventually
+        .have.property('entities').to.not.be.empty;
+    });
+    it('should have 10 entities in meta', () => {
       return expect(listPromise).to.eventually
         .have.property('meta')
         .that.has.property('count', 10);
