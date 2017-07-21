@@ -222,7 +222,7 @@ You can iterate over it using `for (let ... of)`, or simply call `entities.next(
 **There's a feature that isn't supported yet! Can you add it?**
 
 Yep! Please check the [open isses](https://github.com/MediaMath/t1-node/issues) to see if this is already a known problem or request. 
-If it is, we'd love to hear your comments and ideas on how best to approach it. If not, please [create an issue](https://github.com/MediaMath/t1-node/issues/new). Alternatively, consider contributing to the project
+If it is, we'd love to hear your comments and ideas on how best to approach it. If not, please [create an issue](https://github.com/MediaMath/t1-node/issues/new). Alternatively, consider contributing to the project!
 
 **I want to contribute! Is that OK?**
 
