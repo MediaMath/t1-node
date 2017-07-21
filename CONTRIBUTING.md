@@ -9,7 +9,7 @@ t1-node is looking forward to receiving your feedback and pull requests!
 ```bash
 $ git clone git@github.com:[my-user-name]/t1-node.git
 $ cd t1-node/
-$ mocha test
+$ npm test
   ```
 
 ## Found an Issue?

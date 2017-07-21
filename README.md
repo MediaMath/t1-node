@@ -210,3 +210,20 @@ performanceReport.getMeta(conn).then(
 To run integration tests, copy `.env.template` to `.env` and fill in the required values.
 
 `npm run integration` will run integration tests with Mocha.
+
+## FAQ
+
+**The EntityList I requested has an empty `entities` object but the metadata has a nonzero count! What gives?**
+
+t1-node returns an ES6 generator for the `entities` property, which looks like an empty object if you inspect it in the node REPL. 
+You can iterate over it using `for (let ... of)`, or simply call `entities.next().value` to get each entity. 
+[Check out the Mozilla documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) for more information on iterators and generators.  
+
+**There's a feature that isn't supported yet! Can you add it?**
+
+Yep! Please check the [open isses](https://github.com/MediaMath/t1-node/issues) to see if this is already a known problem or request. 
+If it is, we'd love to hear your comments and ideas on how best to approach it. If not, please [create an issue](https://github.com/MediaMath/t1-node/issues/new). Alternatively, consider contributing to the project
+
+**I want to contribute! Is that OK?**
+
+Yes! PRs are more than welcome. Please review the [contributing guidelines](CONTRIBUTING.md) on how best to go about this. 
