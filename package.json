@@ -45,7 +45,7 @@
     ]
   },
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint lib test integration-test",
     "test": "nyc mocha",
     "coverage-report": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage && rm -rf ./coverage",
     "integration": "mocha integration-test",
