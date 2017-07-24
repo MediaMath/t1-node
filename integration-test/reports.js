@@ -3,14 +3,13 @@ const t1 = require('../index');
 require('dotenv').load();
 
 describe('Get Reports', function getReports() {
-  this.timeout(10000);
   const t1conf = {
-    // To run these test, set the dotenv variables by copying
-    // .env.template and filling in the parameters.
     user: process.env.T1_API_USERNAME,
     password: process.env.T1_API_PASSWORD,
     api_key: process.env.T1_API_KEY,
+    baseUrl: process.env.T1_BASEURL,
   };
+  this.timeout(10000);
   const conn = new t1.T1Connection(t1conf);
 
 
