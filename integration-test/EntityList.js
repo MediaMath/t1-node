@@ -23,9 +23,15 @@ describe('Request an entity list and page through it', () => {
     };
     const listPromise = t1.EntityList.get('campaigns', conn, userParams);
     it('should retrieve 10 campaigns', () => {
-      return expect(listPromise).to.eventually
-        .have.property('entities').to.not.be.empty;
-    });
+      return listPromise.then((list) => {
+        let entities = []
+        for (let entity of list.entities) {
+          entities.push(entity)
+        }
+        expect(entities).to.have.lengthOf(10);
+        expect(entities[0]).to.have.property('name');
+        expect(entities[0]).to.have.property('id');
+    })});
     it('should have 10 entities in meta', () => {
       return expect(listPromise).to.eventually
         .have.property('meta')
