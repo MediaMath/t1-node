@@ -2,14 +2,12 @@ const expect = require('./chai_config').expect;
 const t1 = require('../index');
 require('dotenv').load();
 
-
 describe('Get, create and save Entities', () => {
   const t1conf = {
-    preferCookieAuth: true,
     user: process.env.T1_API_USERNAME,
     password: process.env.T1_API_PASSWORD,
     api_key: process.env.T1_API_KEY,
-    // Tests will return 403 if user does not have access to advertiser
+    baseUrl: process.env.T1_BASEURL,
   };
 
   const conn = new t1.T1Connection(t1conf);
